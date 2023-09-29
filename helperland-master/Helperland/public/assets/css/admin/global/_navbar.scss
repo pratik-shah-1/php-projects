@@ -1,0 +1,70 @@
+.admin_navbar{
+    width:100%;
+    height: 60px;  
+    background-color: $admin_navbar_bg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 18px;
+}
+
+.admin_logo{
+    width:172px;
+    height:36px;
+    padding-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    img{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+    }
+}
+
+
+.admin_nav_menu{
+    width:auto;
+    display: flex;
+    align-items: center;
+    p, img, button{
+        margin:0 5px;
+    }
+    p{
+        color:white;
+    }
+    button{
+        padding:5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border:0;
+        img{
+            object-fit: contain;
+        }
+    }
+}
+
+.admin_navbar_toggle_btn_container{// VISIBLE WHEN RESPONSIVE....
+    display: flex;
+    button{
+        margin-left: 10px;
+    }
+}
+
+.admin_dashboard_btn{
+    font-size: 16px;
+    padding:0 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border:0;
+    background-color: transparent;
+    z-index: $admin_dashboard_btn_z_index;
+    i{
+        color:white;
+        font-size: 16px;
+    }
+}
+

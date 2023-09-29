@@ -1,0 +1,12 @@
+.book_service_right{
+    width:360px;
+    margin-left: 30px;
+    position: relative;
+    .model_close_btn{
+        display: none;
+    }
+}
+
+@import "./payment_summary";
+@import "./questions";
+

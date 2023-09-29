@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoper</title>
+    <link rel="icon" href="assets/img/dark.jpg" type="image/gif" sizes="16x16">
+    <!------------------ CSS FILES ------------------>
+    <!-- Bootstrap v4.5.0 -->
+    <!-- FontAwesome v5.13.1 -->
+    <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">    
+    <link rel="stylesheet" type="text/css" href="assets/lib/swiper/swiper-bundle.css">    
+    
+    <!------------------ JS FILES ------------------>
+    <script type="text/javascript" src="assets/lib/jquery.js"></script>
+    <script type="text/javascript" src="assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="assets/lib/swiper/swiper-bundle.js"></script>
+    <script type="text/javascript" src="assets/lib/sweetalert/sweetalert.min.js"></script>  
+</head>
+<body>
+
+
+<!-- For Backlight -->
+<div class='random'></div>
+
+<!-- Header -->
+<div class="header border-bottom">
+    <!-- Sidenav Button---->
+    <button class='shoper_sidenav_btn'><img src="./assets/img/ronaldo.jpg"></button>
+    <!-- Side Navbar-------->
+    <sidenav class='sidenav'>
+        <ul>
+            <li><img src='./assets/img/ronaldo.jpg'><p>Ronaldo</p></li>
+            <li><a href='/shoper/account/'><i class='far fa-user'></i>Your Profile</a></li>
+            <li><a href='/shoper/account/'><i class='fas fa-lock'></i>Change Password</a></li>
+            <li><a href='/shoper/account/'><i class='fas fa-map-marker-alt'></i>Address</a></li>
+            <li><a href='/shoper/account/'><i class='fas fa-user-friends'></i>Manage Customers</a></li>
+            <li><a href='/shoper/account/'><i class='far fa-envelope'></i>Mails</a></li>
+            <li><a href='/shoper/account/'><i class='far fa-trash-alt'></i>Delete Account</a></li>
+            <li><a href='/shoper/signout/'><i class='fas fa-sign-out-alt'></i>Logout</a></li>
+        </ul>
+    </sidenav>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg text-secondary shoper_nav">
+        <button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#shoper_menu"><i class="fas fa-bars"></i></button>
+        <div class="collapse navbar-collapse ml-auto" id="shoper_menu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="/shoper/product/add_form">Add Product</a></li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="/shoper/products">Products</a></li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="/shoper/orders">Orders</a></li>
+                <li class='nav-item mr-4'>
+                    <a class='nav-link' href='/shoper/signout'>
+                        <i class='fas fa-sign-out-alt'></i>Logout</a></li>
+                <!-- <li class='nav-item mr-4'><a class='nav-link' href='/shoper'>Login</a></li> -->
+            </ul>
+        </div>        
+    </nav><!-- NavbarEnd Here.... -->
+</div><!-- End Header -->
+
+<script>
+
+    $('.shoper_sidenav_btn').click(function(){
+        $('.sidenav').addClass('show_sidenav');
+        $('.random').addClass('backlight');
+    });
+
+    $('.random').click(function(){
+        $('.sidenav').removeClass('show_sidenav');
+        $('.random').removeClass('backlight');
+    });
+
+</script>
+
+</body>
+</html>  

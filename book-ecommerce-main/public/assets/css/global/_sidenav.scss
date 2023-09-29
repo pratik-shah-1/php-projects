@@ -1,0 +1,16 @@
+.sidenav{
+    width:250px;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:-250px;
+    background-color:white;
+    box-shadow:1px 1px 10px rgba(0,0,0,0.5);
+    z-index:11;//Because of backlight have a zindex-10...
+    overflow:auto;
+    transition:all 0.5s;        
+    @include ul;
+}
+.show_sidenav{
+    left:0;
+}

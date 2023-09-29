@@ -1,0 +1,135 @@
+// SERVICE PROVIDER MY DETAILS TAB CONTENT CONTAINER
+.sp_my_details{
+    padding:15px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+// ACTIVE OR DISACTIVE
+.sp_account_status{
+    color:$profile_text;
+    font-size: 18px;
+    font-weight: 500;
+    span{
+        color:green;
+        font-weight: normal;
+    }
+}
+
+// BASIC DETAILS & ADDRESS CONTAINER
+.sp_basic_details_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    & > div:nth-child(1),
+    & > div:nth-child(8),
+    & > div:nth-child(9){
+        grid-column: 1/4;
+    }
+    & > div:nth-child(8){// GENDER DIV...
+        padding:10px 0;
+    }
+    & > div:nth-child(1){// BASIC DETAILS AND TITLE CONTAINER
+        padding:25px 0;
+        margin-bottom:5px;
+    }
+}
+
+
+// TITLE : BASIC DETAILS & AVATAR
+.sp_basic_details_title_avatar{
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    overflow: visible;
+    position: relative;
+    border-bottom:0.5px solid $input_border;
+    p{
+        color:$profile_text;
+        font-weight: 500;
+    }
+    img{
+        width:80px;
+        height: 80px;
+        position: absolute;
+        right:0;
+        bottom: 0;
+    }
+}
+
+.select_avatar_container{
+    display: flex;
+    flex-direction:column;
+    p{// TITLE 
+        color:$profile_text;
+        padding-bottom: 10px;
+    }
+    & > div{// AVATART CONTAINER
+        display: flex;
+        div{// LABEL AND INPUT
+            input[type="radio"]{// RADIO BUTTONS
+                display: none;
+                &:checked + label{
+                    border:2px solid $active_profile_tab;
+                }
+            }
+            label{
+                margin-right: 16px;
+                width:70px;
+                height:70px;
+                border-radius:50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                cursor: pointer;
+                img{
+                    width:70px;
+                    height:70px;
+                    border-radius:50%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+.sp_my_address_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:20px;
+    padding-bottom: 24px;
+    & > div:nth-child(1){// TITLE DIV
+        padding:30px 0 15px 0;
+        margin-bottom: 5px;
+        border-bottom:0.5px solid $input_border;
+        grid-column: 1/4;
+        p{
+            color:$profile_text;
+            font-weight: 500;
+        }
+    }
+}
+
+
+@media screen and (max-width:576px) {
+    .sp_basic_details_container{
+        display: flex;
+        flex-direction: column;
+        & > div:nth-child(9){
+            // SELECT AVATAR CONTIANER...
+            & > div{
+                // SELECT AVATAR INNER DIV...
+                overflow:auto;
+            }
+        }
+    }        
+    .sp_my_address_container{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

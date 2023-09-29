@@ -1,0 +1,22 @@
+// TABLE TOP SECTION...
+@import "./top_section/customer";
+@import "./top_section/service_provider";
+@import "./top_section/admin";
+
+@import "./table_tab";// FOR CUSTOMER AND SERVICE PROVIDER...
+@import "./admin_tab";// FOR ADMIN...
+
+// TABLE COMPONENTS...
+@import "./components/status";
+@import "./components/service_date";
+@import "./components/service_id";
+@import "./components/payment";
+@import "./components/service_provider";
+@import "./components/service_details";
+@import "./components/customer_details";
+@import "./components/favourite_pros";
+@import "./components/sp_my_rating";
+@import "./components/block_customer";
+
+
+

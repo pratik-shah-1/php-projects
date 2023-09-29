@@ -1,0 +1,42 @@
+.contact{
+    padding-top: 30px;
+}
+
+.contact_card_container{
+    padding-top: 52px;
+    display: flex;    
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.contact_card{
+    margin:0 71px;
+    width:238px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div:first-child{
+        height: 54px;// HIGHEST IMAGE HEIGHT
+        img{
+            width:100%;
+            height:auto;
+            // WE GIVE WIDTH AND HEIGHT ON HTML PAGE
+            // BECAUSE ALL IMG HAVE DIFFERENT HEIGTH AND WIDTH
+        }
+    }
+    div:last-child{
+        padding-top: 20px;
+        height:72px;
+        p{
+            padding-bottom:8px;
+            text-align: center;
+            color:$contact_text;
+        }    
+    }
+}
+
+.contact_hr{
+    width:1140px;
+    margin:48px auto 74px;
+    background-color: $contact_horizontal_line;
+}

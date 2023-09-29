@@ -1,0 +1,15 @@
+$home_card_width:320px;
+$home_card_margin:0 22.5px;
+
+.home_section_title {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: $home_section_title;
+}
+
+@import "./section_1";
+@import "./section_2";
+@import "./section_3";
+@import "./section_4";
+

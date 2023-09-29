@@ -1,0 +1,74 @@
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+footer{
+    margin-top:auto !important;
+}
+
+
+.form-control,
+.btn,
+.custom-select{
+    box-shadow:none !important;
+}
+
+.custom-select:focus,
+.form-control:focus{
+    border:0.5px solid lightgray !important;
+}
+
+
+.intro_card,
+.footer,
+.contact_details,
+.bg_images,
+.porfolio,
+.upload_resume,
+.login,
+.top_3_portfolio,
+.arrange_portfolio{
+    margin:auto;
+    width:500px; 
+    box-shadow:4px 4px 20px lightgray;
+    border-radius:4px;
+    overflow:hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+@media screen and (max-width:576px) {
+    .intro_card,
+    .footer,
+    .contact_details,
+    .bg_images,
+    .porfolio,
+    .upload_resume,
+    .login,
+    .top_3_portfolio,
+    .arrange_portfolio{
+        width:100%; 
+    }
+        
+}

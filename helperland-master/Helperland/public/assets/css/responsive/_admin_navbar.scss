@@ -1,0 +1,14 @@
+@media screen and (max-width:1200px) {
+    .admin_navbar{
+        width:100%;
+    }
+    .admin_logo{
+        padding-left: 0;
+        p{
+            font-size: 26px;
+        }
+    }
+    .admin_nav_menu{
+        display: none;
+    }
+}

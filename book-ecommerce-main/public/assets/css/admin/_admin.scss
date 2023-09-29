@@ -1,0 +1,75 @@
+@import './coupon';
+@import './field_form';
+.admin{
+    min-height:100vh;
+    table{
+        th{border:1px solid lightgray;}
+        
+    }
+}
+
+.admin_login{
+    @include form;
+    p{ @include title; }
+    & > div{
+        padding:0 25px;
+        @include label_input;
+        input,button{
+            margin:7px 0;
+        }
+        button{
+            margin-bottom:0;
+        }
+    }
+}
+
+.admin_top{
+    button{
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        border:0;
+        outline:none;
+        overflow:hidden;
+        background-color:#fff;
+        img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+    }
+}
+
+.admin_cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    & > div{
+        border:0.5px solid #eee;
+        margin:20px 15px 10px;
+        box-shadow: 1px 1px 20px lightgray;
+        border-radius:8px;
+        background-color:#fff;
+        a{
+            text-decoration:none;
+            color:black;
+            width:150px;
+            padding:10px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            i{
+                font-size:50px;
+            }
+            p{
+                margin:0;
+                font-weight:500;
+            }
+        }
+        transition:all 0.3s;
+        &:hover{
+            transform:scale(1.1);
+        }
+    }
+}

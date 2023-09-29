@@ -1,0 +1,71 @@
+.home_s4{
+    width:100%;
+    background-color: $home_s4_bg;
+    padding-top: 50px;
+    padding-bottom:50px;
+}
+
+.home_s4_card_container{
+    padding-top: 56px;
+    display: flex;
+    justify-content: center;
+}
+
+// ALL SECTION CARD WIDTH MUST BE THE SAME
+.home_s4_card{
+    width: $home_card_width;
+    // height: 370px;// FIXED HEIGHT WILL BE PROBLEM IN RESPONSIVE...
+    padding:38px 35px;
+    margin:$home_card_margin;
+    background-color: white;
+    border-left: 3px solid $home_s4_card_left_border;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 30px #E4EBF0;       
+    & > img{// MESSAGE ICON
+        width:30px;
+        height: 30px;
+        position: absolute;
+        right:20px;
+        top:20px;
+    }
+    p{
+        padding-top: 25px;
+        line-height:20px;
+        color:$home_s4_card_para;
+    }
+    a{
+        margin-top: 25px;
+        color:$home_s4_card_para;
+        img{
+            padding-left: 5px;
+        }
+    }
+}
+
+.home_s4_profile{//PERSON NAME IMAGE
+    display: flex;
+    align-items: center;
+    img{
+        width:70px;
+        height: 70px;
+        margin-right:20px;
+    }
+    div{
+        p{
+            height: auto;
+            margin:0;
+            color:$home_s4_profile_bold;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            padding:0;
+        }
+        span{
+            font-size: 12px;
+            color:$home_s4_profile_lighter;
+        }
+    }
+}

@@ -1,0 +1,242 @@
+//When Your Further Visit Code Don't Think it's Bigger It's Simple Just See Once...
+header{ 
+	width:100%;
+    height:65px;
+    background-color: $main_color;
+    position: relative;
+    z-index:2;
+    //Sidenavbar Button
+    .filter_btn{
+        height:30px;
+        padding:0 5px;
+        position:absolute;
+        top:calc(32.5px - 15px);
+        left:270px;
+        border:0;
+        text-transform:uppercase;
+        font-size:14px;
+        font-weight:500;
+    }
+    .user_sidenav_btn{
+        width:40px;
+        height:40px;
+        background-color:transparent;
+        border:0;
+        position:absolute;
+        left:20px;
+        top:calc(32.5px - 20px);//65/2 32.5...
+        i{
+            width:100%;
+            height:100%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            font-size:16px;
+        }
+    }
+    .only_nav_cart{
+        display:none;
+    }
+    //Navbar...
+    .user_nav{
+        height:65px;//calc(100% - 40px);
+        width:100%;
+        padding:0;
+        display:flex;
+        align-items:center;//.logo .search_container. .menu sab kuch vertical center me ho jayega.,
+        .logo{
+            text-decoration:none;
+            color:white;
+            font-weight:500;
+            font-size:24px;    
+            text-transform:uppercase;    
+            span{
+                font-size:16px;
+                text-transform:lowercase;
+            }
+        }
+        .search_container{
+            @include label_input;
+            flex-direction:row;
+            border-radius:4px;
+            overflow: hidden;
+            margin-left:auto;//By Margin Auto .Menu Class is also going to right Free...
+            margin-right:15px;
+            input,select,button{
+                border-radius:0;
+                border:0;
+                height:36px;
+            }
+            select{width:150px;}
+            input{width:350px;}
+            button{width:50px;}
+        }
+        .menu{
+            ul{
+                list-style:none;
+                margin:0;
+                display:flex;
+                align-items:center;
+                li{
+                    width:60px;
+                    display:grid;
+                    place-items:center;
+                    a{
+                        color:white;
+                        text-decoration:none;
+                    }
+                }
+            }
+        }//End of Menu
+    }//End of Navbar
+
+    //Only For Logo...
+    @media screen and (max-width:1320px){
+        .logo{
+            margin-left:30px;
+        }
+    }
+    @media screen and (max-width:1280px){
+        .logo{
+            margin-left:50px;
+        }
+    }
+    @media screen and (max-width:1030px){
+        .logo{
+            margin-left:70px;
+        }
+    }
+    @media screen and (max-width:992px){
+        height:110px;
+        padding:7px 0;
+        .user_sidenav_btn{
+            left:unset;
+            top:5px;//No Logic Randomly Puting Value Just Set
+            right:14px;//No Logic Randomly Puting Value Just Set
+        }
+        .only_nav_cart{
+            position: absolute;
+            top:5px;
+            right:60px;
+            display:block;
+            color:white;
+        }
+        .filter_btn{
+            position:absolute;
+            top:11px;
+            left:unset;
+            right:120px;
+            font-weight:500;
+            font-size:14px;
+            text-transform:uppercase;
+        }
+        .user_nav{
+            display:flex;
+            flex-direction:column;
+            align-items:flex-start;
+            height:110px;
+            .logo{
+                margin:0;
+            }
+            .search_container{
+                width:100%;
+                border-radius:4px;
+                input{
+                    width:calc(100% - 60px);
+                }
+            }
+            .menu{
+                display:none;
+            }
+        }
+    }//End of Responsive...    
+
+}//End Header
+
+
+//Only For cart_items Badge
+i{
+    position: relative;
+    span{
+        position: absolute;
+        display:grid;
+        place-items:center;
+        top:-10px;
+        right:-10px;
+        font-family:sans-serif;
+        font-weight:normal;
+        font-size:12px;
+        transform:scale(0.9);
+    }
+}
+
+
+
+    // .mega_menu{
+    //     background-color:white;
+    //     box-shadow:1px 1px 10px lightgray;
+    //     ul{
+    //         list-style:none;
+    //         margin:0;        
+    //         display:grid;
+    //         grid-template-columns:repeat(10,1fr);
+    //         li{
+    //             display:grid;
+    //             place-items:center;
+    //             a{
+    //                 width:100%;
+    //                 height:40px;
+    //                 text-decoration:none;
+    //                 color:#1d1d1d;
+    //                 display:flex;
+    //                 justify-content:center;
+    //                 align-items:center;
+    //                 font-size:12px;
+    //                 letter-spacing:0.2px;
+    //                 text-transform:uppercase;
+    //                 font-weight:500;
+    //                 i{
+    //                     margin-left:5px;
+    //                     margin-top:1px;
+    //                     color:gray;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     @media screen and (max-width:992px){
+    //         display:none;
+    //     }
+    // }
+    // .mm_content{
+    //     width:100%;
+    //     position: absolute;
+    //     top:110px;
+    //     background-color:white;
+    //     display: grid;
+    //     grid-template-columns:repeat(5,1fr);
+    //     border-bottom:0.5px solid lightgray;
+    //     z-index:1;
+    //     ul{
+    //         list-style:none;
+    //         margin:0 20px 0 0;
+    //         padding:10px 0;
+    //         &:first-child{
+    //             margin-left:20px;
+    //         }
+    //         li{
+    //             a{
+    //                 display:flex;
+    //                 text-decoration:none;
+    //                 color:gray;
+    //                 padding:7px 30px;
+    //                 border-radius:4px;
+    //                 letter-spacing:0.5px;
+    //                 &:hover{
+    //                     color:black;
+    //                     background-color:#eee;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }

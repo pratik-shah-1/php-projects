@@ -1,0 +1,16 @@
+footer{
+    width:100%;
+    position:absolute;
+    bottom:0px;
+    left:0;
+    z-index:1;
+    // Last Footer Copyright...
+    p:last-child{
+        padding:20px 0;
+        @include spartan_google;
+        color:white;
+        text-align:center;
+        font-size:14px;
+        font-weight:100;
+    }
+}

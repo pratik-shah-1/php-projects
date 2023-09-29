@@ -1,0 +1,14 @@
+.sp_my_rating{
+    display: flex;
+    flex-direction: column;
+    div{
+        display: flex;
+        padding-bottom: 10px;
+        i{
+            margin:0 3px;
+        }
+    }
+    p{
+        text-align: center;
+    }
+}

@@ -1,0 +1,115 @@
+.contact_form{
+    display:flex;
+    flex-direction:column !important;
+    @include glassmorphism;
+    width:500px;
+    height:400px;
+    margin:140px auto;
+    margin-bottom:56px;
+
+    @media screen and (max-width:600px) {
+        width:100%;
+    }
+
+    @media screen and (max-width:1280px) {
+        margin-top:170px;
+    }
+
+    @media screen and (min-width:1440px) {
+        width:612px;
+        height:500px;
+    }
+
+    @media screen and (min-width:1600px) {
+        width:800px;
+        height:592px;
+        margin-top:166px;    
+        margin-bottom:0px;
+    }
+
+    p{
+        @include spartan;
+        text-align:center;
+        font-weight:bold;
+        padding:28px;
+        @media screen and (min-width:500px) {
+            font-size:20px;            
+        }
+        @media screen and (min-width:1600px) {
+            margin:0;
+            font-size:28px;
+            padding:42px;    
+            padding-bottom:57px;
+        }
+    }
+
+    form{
+        width:100%;
+        display:flex;
+        flex-direction:column !important;
+        input,textarea{
+            background-color:transparent;
+            border:0.5px solid gray;
+            @include spartan;
+            color:white;
+            outline:none;
+            width:400px;       
+            height:40px;     
+            margin:0 auto 16px;
+            padding:0 24px;
+            border-radius:24px;
+            @media screen and (max-width:600px) {
+                width:80%;
+            }
+
+            @media screen and (min-width:1440px) {
+                width:477px;
+                height:48px;
+                margin-bottom:24px;
+            }
+            @media screen and (min-width:1600px) {
+                width:648px;
+                height:56px;                    
+                padding:0 48px;
+                font-size:18px;
+                border-radius:50px;
+                margin-bottom:24px;
+            }
+        }
+
+        textarea{ 
+            resize:none;
+            height:120px;
+            padding:15px 24px;
+            @media screen and (min-width:1440px) {
+                height:180px;
+            }
+            @media screen and (min-width:1600px) {
+                margin-bottom:36px;
+                height:176px;
+                padding:30px 48px;
+                line-height:35px;    
+                border-radius:32px;
+            }
+        }
+
+        button{
+            width:100px;
+            margin:0 auto;
+            @include spartan;
+            color:black;
+            border-radius:24px;
+            height:40px;
+            border:0;
+            outline:none;
+            @media screen and (min-width:1600px) {
+                padding:0px;
+                border-radius:50px;
+                width:146px;
+                height:34px;
+                font-size:18px;    
+            }
+        }
+    }
+
+}

@@ -1,0 +1,32 @@
+.contact_section{
+    border:0.5px solid transparent;
+    @include side_padding;
+    @import './contact_form';
+    @import './contact_details';
+
+
+    // height:600px !important;
+    // border:2px solid white;
+
+    height:100%;
+    @media screen and (min-width:1600px) {
+        @include section_height;
+    }
+
+    // Image of contact_section
+    position:relative;
+    .img_of_contact_section{
+        position:absolute;
+        z-index:-1;
+        left:0;
+        overflow:hidden;
+        height:100%;
+        img{
+            width:100%;
+            height:100% !important;
+            object-fit:cover;
+            opacity:25%;
+        }
+    }
+
+}

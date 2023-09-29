@@ -1,0 +1,104 @@
+.contact_form{
+    display:flex;
+    flex-direction:column !important;
+    @include glassmorphism;
+    margin-top:80px;
+    width:500px;
+    height:400px;
+
+    @media screen and (max-width:600px) {
+        width:100%;
+    }
+
+    @media screen and (min-width:1440px) {
+        width:612px;
+        height:500px;
+    }
+
+    @media screen and (min-width:1600px) {
+        width:816px;
+        height:704px;
+        margin-top:166px;    
+    }
+
+    p{
+        @include spartan;
+        text-align:center;
+        font-weight:bold;
+        padding:28px;
+        font-size:24px;
+        @media screen and (min-width:1600px) {
+            margin:0;
+            font-size:32px;
+            padding:58px !important;    
+        }
+    }
+
+    form{
+        width:100%;
+        display:flex;
+        flex-direction:column !important;
+        input,textarea{
+            background-color:transparent;
+            border:0.5px solid gray;
+            @include spartan;
+            color:white;
+            outline:none;
+            width:400px;       
+            height:40px;     
+            margin:0 auto 16px;
+            padding:0 24px;
+            border-radius:24px;
+            @media screen and (max-width:600px) {
+                width:80%;
+            }
+
+            @media screen and (min-width:1440px) {
+                width:477px;
+                height:48px;
+                margin-bottom:24px;
+            }
+            @media screen and (min-width:1600px) {
+                width:636px;
+                height:64px;                    
+                padding:0 48px;
+                font-size:18px;
+                border-radius:50px;
+                margin-bottom:32px;
+            }
+        }
+
+        textarea{ 
+            resize:none;
+            height:120px;
+            padding:15px 24px;
+            @media screen and (min-width:1440px) {
+                height:180px;
+            }
+            @media screen and (min-width:1600px) {
+                height:200px;
+                padding:30px 48px;
+                line-height:35px;    
+            }
+        }
+
+        button{
+            width:100px;
+            margin:0 auto;
+            @include spartan;
+            color:black;
+            border-radius:24px;
+            height:40px;
+            border:0;
+            outline:none;
+            @media screen and (min-width:1600px) {
+                padding:0px;
+                border-radius:50px;
+                width:146px;
+                height:40px;
+                font-size:18px;    
+            }
+        }
+    }
+
+}

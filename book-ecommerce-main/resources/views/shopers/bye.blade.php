@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MyBooks-Bye</title>
+    <link rel="icon" href="{{asset('assets/img/dark.jpg')}}" type="image/gif" sizes="16x16">
+	<!------------------ CSS FILES ------------------>
+	<!-- Bootstrap v4.5.0 -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/lib/bootstrap/bootstrap.min.css')}}">
+</head>
+<body>	
+	<main class="my-5 py-5 d-flex flex-column align-items-center justify-content-center">
+		<p class="display-4">We are Sorry To See</p>	
+		<a href="/shoper/" class="mt-5 btn btn-outline-warning">Go to Home</button>
+	</main>
+</body>
+</html>

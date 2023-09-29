@@ -1,0 +1,40 @@
+.manage_product_top{
+    background-color:whitesmoke;
+    display:flex;
+    justify-content:flex-end;
+    padding:10px 20px;
+    #search{
+        @include label_input;
+        flex-direction:row;
+        margin:0;
+        width:600px;
+        border-radius:4px;
+        border:0.5px solid lightgray;
+        overflow: hidden;
+        input,select,button{
+            border:0;
+            border-radius:0;
+        }
+        select{
+            width:100px;
+            border-right:0.5px solid lightgray;
+        }
+        button{
+            width:50px;
+        }
+        input{
+            width:calc(100% - 150px);
+        }
+    }
+    @media screen and (max-width:850px){
+        flex-direction:column;
+        #search{
+            width:100%;
+        }
+        div{
+            margin-top:20px;
+            align-self:flex-end;
+        }
+    }
+}
+

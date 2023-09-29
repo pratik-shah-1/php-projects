@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoper</title>
+    <link rel="icon" href="assets/img/dark.jpg" type="image/gif" sizes="16x16">
+    <!------------------ CSS FILES ------------------>
+    <!-- Bootstrap v4.5.0 -->
+    <!-- FontAwesome v5.13.1 -->
+    <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">    
+    <link rel="stylesheet" type="text/css" href="assets/lib/swiper/swiper-bundle.css">    
+    
+    <!------------------ JS FILES ------------------>
+    <script type="text/javascript" src="assets/lib/jquery.js"></script>
+    <script type="text/javascript" src="assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="assets/lib/swiper/swiper-bundle.js"></script>
+    <script type="text/javascript" src="assets/lib/sweetalert/sweetalert.min.js"></script>  
+</head>
+<body>
+
+
+<!-- For Backlight -->
+<div class='random'></div>
+
+<!-- Header -->
+<div class="header border-bottom">
+    <!-- Sidenav Button---->
+    <button class='shoper_sidenav_btn'><img src="./assets/img/ronaldo.jpg"></button>
+    <!-- Side Navbar-------->
+    <sidenav class='sidenav'>
+        <ul>
+            <li><img src='./assets/img/ronaldo.jpg'><p>Ronaldo</p></li>
+            <li><a href='/shoper/account/'><i class='far fa-user'></i>Your Profile</a></li>
+            <li><a href='/shoper/account/'><i class='fas fa-lock'></i>Change Password</a></li>
+            <li><a href='/shoper/account/'><i class='fas fa-map-marker-alt'></i>Address</a></li>
+            <li><a href='/shoper/account/'><i class='fas fa-user-friends'></i>Manage Customers</a></li>
+            <li><a href='/shoper/account/'><i class='far fa-envelope'></i>Mails</a></li>
+            <li><a href='/shoper/account/'><i class='far fa-trash-alt'></i>Delete Account</a></li>
+            <li><a href='/shoper/signout/'><i class='fas fa-sign-out-alt'></i>Logout</a></li>
+        </ul>
+    </sidenav>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg text-secondary shoper_nav">
+        <button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#shoper_menu"><i class="fas fa-bars"></i></button>
+        <div class="collapse navbar-collapse ml-auto" id="shoper_menu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="/shoper/product/add_form">Add Product</a></li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="/shoper/products">Products</a></li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="/shoper/orders">Orders</a></li>
+                <li class='nav-item mr-4'>
+                    <a class='nav-link' href='/shoper/signout'>
+                        <i class='fas fa-sign-out-alt'></i>Logout</a></li>
+                <!-- <li class='nav-item mr-4'><a class='nav-link' href='/shoper'>Login</a></li> -->
+            </ul>
+        </div>        
+    </nav><!-- NavbarEnd Here.... -->
+</div><!-- End Header -->
+
+<script>
+
+    $('.shoper_sidenav_btn').click(function(){
+        $('.sidenav').addClass('show_sidenav');
+        $('.random').addClass('backlight');
+    });
+
+    $('.random').click(function(){
+        $('.sidenav').removeClass('show_sidenav');
+        $('.random').removeClass('backlight');
+    });
+
+</script>
+
+
+
+<!-- Main Container -->
+<main class="my-5 px-3">
+    <!--- Login Form ---->
+      <form class='s_login' method="POST" action="/shoper/signin">
+          <p>Login</p>
+  
+          <div>
+            <label>Email Address or Mobile</label>
+            <input class="form-control" type="text" name="email" required>
+            <p class="email_error_msg d-none text-danger m-0 small">Helo This is Error</p>
+          </div>
+  
+          <div>
+            <label>Password</label>
+            <input class="form-control" type="password" name="pswd" required>
+            <p class="pswd_error_msg d-none text-danger m-0 small">Helo This is Error</p>
+          </div>
+  
+          <div>
+            <label></label>
+            <input class='mt-2 btn btn-outline-primary' type="submit" value="Login">
+          </div>
+  
+          <div class='flex-row justify-content-center pt-2'>
+            <p class='m-0 mr-2'>Not a Member?</p>
+            <a class='signup_btn' href="#">Signup</a>
+          </div>    
+      </form>
+  
+    <!--- Signup Form ---->
+    <form class='s_signup d-none' method="POST" action="/shoper/signup">
+      <p>Signup</p>
+      <div class='section_1'>
+        <p>Shop Info</p>
+        
+        <div>
+            <label>State</label>
+            <select class="form-control" name="state" onchange="find_city(this.value);">
+              <option value="{{$i->state}}">Gujarat</option>
+            </select>
+        </div>
+        
+        <div>
+          <label>City</label>
+          <select name="city" class="form-control">
+            <option value="{{$j->city}}">Idar</option>
+          </select>
+        </div>
+        
+        <div>
+          <label>Shop Address</label>
+          <textarea class="form-control" name="adrs"></textarea>
+          <!-- <input class="form-control" type="text" name="adrs" required> -->
+          <p class="address_error_msg d-none text-danger m-0 small">Helo This is Error</p>
+        </div>
+        
+        <div>
+          <label>Zip Code</label>
+          <input class="form-control" type="text" name="zcode" required>
+          <p class="zcode_error_msg d-none text-danger m-0 small">Helo This is Error</p>
+        </div>
+        
+        <div class='flex-row justify-content-end pt-2'> 
+          <button class='btn btn-primary next_btn' href="">Next</button>
+        </div>
+        
+        <div class='flex-row justify-content-center pt-2'>
+          <p class='m-0 mr-2'>Already Member?</p>
+          <a class='login_btn' href="#">Login</a>
+        </div>
+      
+      </div>
+      <div class='section_2 d-none'>
+        <p>Shoper Info</p>
+        
+        <div>
+          <label>Full Name</label>
+          <input class="form-control" type="text" name="name" required>
+          <p class="name_error_msg d-none text-danger m-0 small"></p>
+        </div>
+        
+        <div>
+          <label>Mobile Number</label>
+          <input class="form-control" type="text" name="mobile" required>
+          <p class="mobile_error_msg d-none text-danger m-0 small"></p>
+        </div>
+        
+        <div>
+          <label>Email Address</label>
+          <input class="form-control" type="text" name="email" required>
+          <p class="email_error_msg d-none text-danger m-0 small"></p>
+        </div>
+        
+        <div>
+          <label>Password</label>
+          <input class="form-control" type="password" name="pswd" required>
+          <p class="pswd_error_msg d-none text-danger m-0 small"></p>
+        </div>
+        
+        <div>
+          <label>Confirm Password</label>
+          <input class="form-control" type="password" name="cpswd" required>
+          <p class="cpswd_error_msg d-none text-danger m-0 small"></p>
+        </div>
+        
+        <div class='flex-row align-item-center justify-content-between pt-2'> 
+          <button class='btn btn-outline-primary prev_btn' href="">Previous</button>
+          <button class='btn btn-primary'>Signup</button>
+        </div>
+      </div>
+    </form>
+  </main>
+  
+  <script>
+    
+    function find_city(state){
+      const city_option = $('[name="city"]')[0];
+      $.ajax({
+        url:'/find_city/'+state, 
+        method: 'GET',
+        success:function(res){
+          const city = JSON.parse(res);
+          city_option.innerHTML = "";
+          for(let i = 0; i< city.length; i++){
+            city_option.innerHTML += "<option value='"+city[i]['city']+"'>"+city[i]['city']+"</option>";        
+          }
+        }
+      });
+    }
+  
+    $('.login_btn').click(function(e){
+      e.preventDefault();
+      $('.s_login').removeClass('d-none');
+      $('.s_signup').addClass('d-none');
+    });
+  
+    $('.signup_btn').click(function(e){
+      e.preventDefault();
+      $('.s_signup').removeClass('d-none');
+      $('.s_login').addClass('d-none');
+    }); 
+  
+    $('.next_btn').click(function(e){
+      e.preventDefault();
+      $('.section_1').addClass('d-none');
+      $('.section_2').removeClass('d-none');
+    });
+  
+    $('.prev_btn').click(function(e){
+      e.preventDefault();
+      $('.section_1').removeClass('d-none');
+      $('.section_2').addClass('d-none');
+    });
+  
+  
+    $('[name="email"]').focusout(function(){
+      const val = $(this).val();
+      const reg = /^[a-zA-Z0-9.]+@[a-zA-Z0-9]+(\.[a-zA-Z]{2,})+$/;
+      $('.email_error_msg').removeClass('d-none').html('');
+          if(val == ""){
+            $('.email_error_msg').html('Email Address cannot be blank!');
+              $(this).addClass('is-invalid');
+          }
+          else if(!reg.test(val)){
+            $('.email_error_msg').html('Please Enter Valid Email Address!!!');
+              $(this).addClass('is-invalid');
+          }
+          else{
+              $('.email_error_msg').html('').addClass('d-none');
+              $(this).addClass('is-valid').removeClass('is-invalid');
+          }
+    });
+  
+  
+    //-----------------------------------------------------
+    //      Password Validation
+    //-----------------------------------------------------
+    $('[name="pswd"]').focusout(function(){
+      const val = $(this).val();
+      const reg = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;        
+      
+      $('.pswd_error_msg').removeClass('d-none').html('');
+          
+          if(val == ""){
+            $('.pswd_error_msg').html('Password Field cannot be blank!');
+              $(this).addClass('is-invalid');
+          }
+          else if(!reg.test(val)){
+            $('.pswd_error_msg').html('Make combo of special character, digits and capital!');
+              $(this).addClass('is-invalid');
+          }
+          else{
+              $('.pswd_error_msg').html('');
+              $(this).addClass('is-valid').removeClass('is-invalid');
+          }
+    });
+  
+    $('[name="cpswd"]').keyup(function(){
+      const val = $(this).val();
+      const prev_val = $('[name="pswd"]:nth(1)').val();
+  
+      $('.cpswd_error_msg').removeClass('d-none').html('');
+          if(val == ""){
+            $('.cpswd_error_msg').html('Confirm Password Filed Cannot be Blank !!!');
+              $(this).addClass('is-invalid');
+          }
+          else if(val != prev_val){
+            $('.cpswd_error_msg').html('Password and Confirm Password Not Match!!!');
+              $(this).addClass('is-invalid');
+          }
+          else{
+              $('.cpswd_error_msg').html('');
+              $(this).addClass('is-valid').removeClass('is-invalid');
+          }
+    });
+  
+    //-----------------------------------------------------
+    //      Mobile Validation
+    //-----------------------------------------------------
+    $('[name="mobile"]').focusout(function(){
+      const val = $(this).val();
+      const reg = /^[0-9]{10}$/;
+  
+      $('.mobile_error_msg').removeClass('d-none').html('');
+          
+          if(val == ""){
+            $('.mobile_error_msg').html('Mobile Field cannot be blank!');
+              $(this).addClass('is-invalid');
+          }
+          else if(!reg.test(val)){
+            $('.mobile_error_msg').html('Mobile Number Must be 10 Digits!!!');
+              $(this).addClass('is-invalid');
+          }
+          else{
+              $('.mobile_error_msg').html('');
+              $(this).addClass('is-valid').removeClass('is-invalid');
+          }
+    });
+  
+    //-----------------------------------------------------
+    //      Zip Code Validation
+    //-----------------------------------------------------
+    $('[name="zcode"]').focusout(function(){
+      const val = $(this).val();
+      const reg = /^[0-9]{6}$/;
+  
+      $('.zcode_error_msg').removeClass('d-none').html('');        
+          if(val == ""){
+            $('.zcode_error_msg').html('Zip Code Field cannot be blank!');
+              $(this).addClass('is-invalid');
+          }
+          else if(!reg.test(val)){
+            $('.zcode_error_msg').html('Zip Code Must be 6 Digits!!!');
+              $(this).addClass('is-invalid');
+          }
+          else{
+              $('.zcode_error_msg').html('');
+              $(this).addClass('is-valid').removeClass('is-invalid');
+          }
+    });
+  
+    //-----------------------------------------------------
+    //      Full Name Validation
+    //-----------------------------------------------------
+    $('[name="name"]').focusout(function(){
+      const val = $(this).val();
+      const reg = /^[A-Za-z]/;        
+      $('.name_error_msg').removeClass('d-none').html('');
+          
+          if(val == ""){
+            $('.name_error_msg').html('Name Field cannot be blank!');
+              $(this).addClass('is-invalid');
+          }
+          else if(!reg.test(val)){
+            $('.name_error_msg').html('Please Enter only Alphabets !!!');
+              $(this).addClass('is-invalid');
+          }
+          else{
+              $('.name_error_msg').html('');
+              $(this).addClass('is-valid').removeClass('is-invalid');
+          }
+    });
+  
+  </script>
+  
+
+
+</body>
+</html>  

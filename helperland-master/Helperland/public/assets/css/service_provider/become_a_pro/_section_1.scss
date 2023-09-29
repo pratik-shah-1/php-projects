@@ -1,0 +1,78 @@
+.become_a_pro_s1{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.become_a_pro_s1_bg{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+}
+
+.registration_form{
+    margin-top: 152px;
+    background-color: #FFFFFF;
+    width:430px;
+    height:auto;
+    padding:19px 35px;
+    box-shadow: 0 0 16px $registration_shadow;
+    border-radius: 4px;
+    & > p{
+        color:$registration_title;
+        font-size: 24px;
+        text-align: center;
+        margin:0;
+        padding-bottom: 24px;
+        font-weight: bold;
+    }
+}
+
+.registration_form > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    .form_group{
+        padding-bottom: 15px;
+        .phone_number{
+            width:100%;
+            height:46px;
+        }
+    }
+    & > div:nth-child(7),
+    & > div:nth-child(8){
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding-bottom: 15px;
+        input[type="checkbox"]{
+            width: 16px;
+            height: 16px;
+            border:2px solid yellow;
+            margin:0;
+            margin-right: 7px;
+        }
+        p{
+            color:$registration_title;
+            width:calc(100% - 16px);
+            a{
+                color:$registration_term;
+            }
+        }
+    }
+    button{
+        // SUBMIT BUTTON...
+        margin-top: 40px;
+        width:166px;
+        font-size:14px;
+        img{
+            margin-left: 8px;
+        }
+    }
+}

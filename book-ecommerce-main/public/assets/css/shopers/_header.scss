@@ -1,0 +1,51 @@
+.header{
+    .shoper_sidenav_btn{
+        background-color:transparent;
+        border:0;
+        z-index:1;
+        outline:none;
+        position:absolute;
+        left:20px;
+        top:7px;//This is not Good
+        img{
+            width:40px;
+            height:40px;
+            object-fit:cover;
+            border-radius:50%;
+        }
+        @media screen and (max-width:992px){
+            top:3.5px;
+        }
+    }
+ 
+    #shoper_menu{
+        ul{
+            li{
+                a{
+                    text-transform:uppercase;
+                    font-weight:500;
+                    font-size:14px;
+                    display:flex;
+                    align-items:center;
+                    color:gray;
+                    i{                
+                        font-size:18px;
+                        margin:0 5px;
+                        display: grid;
+                        place-items:center;
+                    }
+                }
+            }
+            @media screen and (max-width:992px){
+                margin-top:7px;
+                li{
+                    margin:0 7px;
+                    a{
+                        margin:2px 0;
+                    }
+                }
+            }//Media Query...       
+        }//Ul End...
+    }//End shoperMenu...
+
+}

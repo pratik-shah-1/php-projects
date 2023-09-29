@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Requests</title>
+	<!-- FAVICON -->
+	<link rel="icon" href="../assets/img/favicon/favicon.png" sizes="16x16" type="image/png">	
+	<!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/index.css">
+	<!-- FONT-AWESOME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<!-- JQUERY -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+    <!-- ------------------------------------ -->
+                <!-- NAVBAR -->
+    <!-- ------------------------------------ -->
+    <nav class="admin_navbar">
+
+        <div class="admin_logo">
+            <a href=""><img src="../assets/img/global/admin-logo.png" alt=""></a>
+        </div>
+
+        <!-- NAV_BTN_RESPONSIVE -->
+        <div class="admin_navbar_toggle_btn_container">
+            <button class="admin_dashboard_btn" title="Dashboard"><i class="fas fa-tachometer-alt"></i></button>
+            <button class="sidenav_btn"><i class="fas fa-bars"></i></button>
+        </div>
+
+        <div class="admin_nav_menu">
+            <img src="../assets/img/global/user.png" alt="">
+            <p>James Smith</p>
+            <button><img src="../assets/img/global/logout.png" alt=""></button>
+        </div>
+    </nav>
+
+    <!-- --------------------------------------------------- -->
+						<!-- FOR_BACKLIGHT_CONTAIN -->
+	<!-- --------------------------------------------------- -->
+	<div class="backlight_container"></div>
+
+	<!-- --------------------------------------------------- -->
+						<!-- SIDE_NAVBAR -->
+	<!-- --------------------------------------------------- -->
+	<aside class="sidenav">
+		<!-- FOR_LOGGED_USER -->
+		<div class="sidenav_header">
+			<p>Warm Welcome</p>
+			<p class="sidenav_logged_username">Kavan Patel</p>
+		</div>
+		<hr>
+		<div class="sidenav_main">
+			<!-- GUEST_USER -->
+			<a href="">Book Now</a>
+			<a href="">Prices & Services</a>
+			<a href="">Gurantee</a>
+			<a href="">Blog</a>
+			<a href="">Contact</a>
+			<a href="">Register</a>
+			<a href="">Become a Helper!</a>
+			<!-- CUSTOMER -->
+			<!-- <a href="">Overview</a>
+			<a href="">Completed Service Orders</a>
+			<a href="">Calander view</a>
+			<a href="">My Favorites</a>
+			<a href="">Bills</a>
+			<a href="">My Setting</a>
+			<a href="">Logout</a> -->
+
+			<!-- SERVICE_PROVIDER -->
+			<!-- <a href="">Overview</a>
+			<a href="">New Inquiries</a>
+			<a href="">Accepted Requests</a>
+			<a href="">Calander view</a>
+			<a href="">Completed Service Orders</a>
+			<a href="">My Reviews</a>
+			<a href="">Block Customer</a>
+			<a href="">Bills</a>
+			<a href="">My Setting</a>
+			<a href="">Logout</a> -->
+
+			<!-- ADMIN -->
+			<!-- <a href="">My Setting</a>
+			<a href="">Logout</a> -->
+
+		</div>
+		<hr>
+		<!-- COMMAN_LINKS_AFTER_LOGIN_OF_USER -->
+		<!-- <div class="sidenav_comman_links">
+			BOOK NOW FOR CUSTOMER
+			<a href="">Book Now</a>
+			<a href="">Prices & Services</a>
+			<a href="">Gurantee</a>
+			<a href="">Blog</a>
+			<a href="">Contact</a>
+		</div>
+		<hr> -->
+		<div class="sidenav_footer">
+			<a href=""><i class="fab fa-facebook-f"></i></a>
+			<a href=""><i class="fab fa-instagram"></i></a>
+		</div>
+	</aside>
+
+
+    <!-- ------------------------------------ -->
+                <!-- ADMIN_PANEL -->
+    <!-- ------------------------------------ -->
+    <main class="admin_panel">
+
+        <div class="admin_left">
+            <div class="admin_tab_list">
+                <a href="#">Service Management</a>
+                <a href="#">Role Management</a>
+                <div class="admin_accordion">
+                    <div>
+                        <button class="accordion_btn"><p>Coupon Code Management</p><i class="fas fa-angle-right"></i></button>                            
+                    </div>
+                    <div class="accordion_content">
+                        <div>
+                            <a href="#">Coupon Codes</a>
+                            <a href="#">Usage History</a>    
+                        </div>
+                    </div>
+                </div>
+                <a href="#">Escalation Management</a>
+                <a class="admin_tab_btn" href="#">Service Requests</a>
+                <a href="#">Service Providers</a>
+                <a class="admin_tab_btn active_admin_tab_btn" href="#">User Management</a>
+                <div class="admin_accordion">
+                    <div>
+                        <button class="accordion_btn"><p>Finance Module</p><i class="fas fa-angle-right"></i></button>  
+                    </div>
+                    <div class="accordion_content">
+                        <div>
+                            <a href="#">All Transactions</a>
+                            <a href="#">Generate Payment</a>
+                            <a href="#">Customer Invoices</a>    
+                        </div>
+                    </div>
+                </div>
+                <a href="#">Zip Code Management</a>
+                <a href="#">Rating Management</a>
+                <a href="#">Inquiry Management</a>
+                <a href="#">Newsletter Management</a>
+                <div class="admin_accordion">
+                    <div>
+                        <button class="accordion_btn"><p>Content Management </p><i class="fas fa-angle-right"></i></button>    
+                    </div>
+                    <div class="accordion_content">
+                        <div>
+                            <a href="#">Blog</a>
+                            <a href="#"> FAQs</a>    
+                        </div>
+                    </div>
+                </div>
+            </div><!-- END_ADMIN_TAB_LIST -->
+        </div><!-- END_ADMIN_LEFT -->
+
+        <div class="admin_right">
+
+            <div class="admin_tab_content d_none">
+                <div class="service_requests">
+                    <div>
+                        <p>Service Requests</p>
+                    </div>
+                    <div>
+                        <input class="input" type="text" placeholder="Service ID">
+                        <select class="select" name="" id="">
+                            <option value="">Customer</option>
+                        </select>
+                        <select class="select" name="" id="">
+                            <option value="">Service Provider</option>
+                        </select>
+                        <select class="select" name="" id="">
+                            <option value="">Status</option>
+                        </select>
+                        <div class="from_date">
+                            <label for="from_date">From<img src="../assets/img/table/calendar_blue.png" alt=""></label>
+                            <input type="date" id="from_date">
+                        </div>
+                        <div class="to_date">
+                            <label for="to_date">To<img src="../assets/img/table/calendar_blue.png" alt=""></label>
+                            <input type="date" id="to_date">
+                        </div>
+                        <button class="search_btn">Search</button>
+                        <button class="clear_btn">Clear</button>
+                    </div>
+                </div><!-- END_SERVICE_REQUESTS -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service ID</th>
+                            <th>Service Date</th>
+                            <th>Customer Details</th>
+                            <th>Service Provider</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>323436</td>
+                            <td>
+                                <div class="service_date">
+                                    <div>
+                                        <img src="../assets/img/table/calendar.png" alt="">
+                                        <p>09/04/2018</p>
+                                    </div>
+                                    <div>
+                                        <img src="../assets/img/table/time.png" alt="">
+                                        <p>12:00 - 18:00</p>
+                                    </div>    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer_details">
+                                    <p>David Bough</p>
+                                    <div>
+                                        <img src="../assets/img/table/home.png" alt="">
+                                        <p>Musterstrabe 5,12345 Bonn</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td><p class="new_status">New</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Edit</a>
+                                        <a href="">Reschedule</a>
+                                        <a href="">Cancel</a>
+                                        <a href="">Change SP</a>
+                                        <a href="">Escalate</a>
+                                        <a href="">History Log</a>
+                                        <a href="">Download Invoice</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>323436</td>
+                            <td>
+                                <div class="service_date">
+                                    <div>
+                                        <img src="../assets/img/table/calendar.png" alt="">
+                                        <p>09/04/2018</p>
+                                    </div>
+                                    <div>
+                                        <img src="../assets/img/table/time.png" alt="">
+                                        <p>12:00 - 18:00</p>
+                                    </div>    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer_details">
+                                    <p>David Bough</p>
+                                    <div>
+                                        <img src="../assets/img/table/home.png" alt="">
+                                        <p>Musterstrabe 5,12345 Bonn</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td><p class="new_status">New</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Edit</a>
+                                        <a href="">Reschedule</a>
+                                        <a href="">Cancel</a>
+                                        <a href="">Change SP</a>
+                                        <a href="">Escalate</a>
+                                        <a href="">History Log</a>
+                                        <a href="">Download Invoice</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>323436</td>
+                            <td>
+                                <div class="service_date">
+                                    <div>
+                                        <img src="../assets/img/table/calendar.png" alt="">
+                                        <p>09/04/2018</p>
+                                    </div>
+                                    <div>
+                                        <img src="../assets/img/table/time.png" alt="">
+                                        <p>12:00 - 18:00</p>
+                                    </div>    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer_details">
+                                    <p>David Bough</p>
+                                    <div>
+                                        <img src="../assets/img/table/home.png" alt="">
+                                        <p>Musterstrabe 5,12345 Bonn</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="service_provider">
+                                    <img class="hat_style" src="../assets/img/table/hat.png" alt="">
+                                    <div>
+                                        <p>Lyum Watson</p>    
+                                        <div>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star unrated_star"></i>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><p class="pending_status">Pending</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Edit</a>
+                                        <a href="">Reschedule</a>
+                                        <a href="">Cancel</a>
+                                        <a href="">Change SP</a>
+                                        <a href="">Escalate</a>
+                                        <a href="">History Log</a>
+                                        <a href="">Download Invoice</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>323436</td>
+                            <td>
+                                <div class="service_date">
+                                    <div>
+                                        <img src="../assets/img/table/calendar.png" alt="">
+                                        <p>09/04/2018</p>
+                                    </div>
+                                    <div>
+                                        <img src="../assets/img/table/time.png" alt="">
+                                        <p>12:00 - 18:00</p>
+                                    </div>    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer_details">
+                                    <p>David Bough</p>
+                                    <div>
+                                        <img src="../assets/img/table/home.png" alt="">
+                                        <p>Musterstrabe 5,12345 Bonn</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="service_provider">
+                                    <img class="hat_style" src="../assets/img/table/hat.png" alt="">
+                                    <div>
+                                        <p>Lyum Watson</p>    
+                                        <div>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star unrated_star"></i>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><p class="pending_status">Pending</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Edit</a>
+                                        <a href="">Reschedule</a>
+                                        <a href="">Cancel</a>
+                                        <a href="">Change SP</a>
+                                        <a href="">Escalate</a>
+                                        <a href="">History Log</a>
+                                        <a href="">Download Invoice</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>323436</td>
+                            <td>
+                                <div class="service_date">
+                                    <div>
+                                        <img src="../assets/img/table/calendar.png" alt="">
+                                        <p>09/04/2018</p>
+                                    </div>
+                                    <div>
+                                        <img src="../assets/img/table/time.png" alt="">
+                                        <p>12:00 - 18:00</p>
+                                    </div>    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer_details">
+                                    <p>David Bough</p>
+                                    <div>
+                                        <img src="../assets/img/table/home.png" alt="">
+                                        <p>Musterstrabe 5,12345 Bonn</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="service_provider">
+                                    <img class="hat_style" src="../assets/img/table/hat.png" alt="">
+                                    <div>
+                                        <p>Lyum Watson</p>    
+                                        <div>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star unrated_star"></i>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><p class="completed_status">Complted</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Edit</a>
+                                        <a href="">Reschedule</a>
+                                        <a href="">Cancel</a>
+                                        <a href="">Change SP</a>
+                                        <a href="">Escalate</a>
+                                        <a href="">History Log</a>
+                                        <a href="">Download Invoice</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>323436</td>
+                            <td>
+                                <div class="service_date">
+                                    <div>
+                                        <img src="../assets/img/table/calendar.png" alt="">
+                                        <p>09/04/2018</p>
+                                    </div>
+                                    <div>
+                                        <img src="../assets/img/table/time.png" alt="">
+                                        <p>12:00 - 18:00</p>
+                                    </div>    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer_details">
+                                    <p>David Bough</p>
+                                    <div>
+                                        <img src="../assets/img/table/home.png" alt="">
+                                        <p>Musterstrabe 5,12345 Bonn</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="service_provider">
+                                    <img class="hat_style" src="../assets/img/table/hat.png" alt="">
+                                    <div>
+                                        <p>Lyum Watson</p>    
+                                        <div>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star unrated_star"></i>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><p class="completed_status">Completed</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Edit</a>
+                                        <a href="">Reschedule</a>
+                                        <a href="">Cancel</a>
+                                        <a href="">Change SP</a>
+                                        <a href="">Escalate</a>
+                                        <a href="">History Log</a>
+                                        <a href="">Download Invoice</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>323436</td>
+                            <td>
+                                <div class="service_date">
+                                    <div>
+                                        <img src="../assets/img/table/calendar.png" alt="">
+                                        <p>09/04/2018</p>
+                                    </div>
+                                    <div>
+                                        <img src="../assets/img/table/time.png" alt="">
+                                        <p>12:00 - 18:00</p>
+                                    </div>    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer_details">
+                                    <p>David Bough</p>
+                                    <div>
+                                        <img src="../assets/img/table/home.png" alt="">
+                                        <p>Musterstrabe 5,12345 Bonn</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="service_provider">
+                                    <img class="hat_style" src="../assets/img/table/hat.png" alt="">
+                                    <div>
+                                        <p>Lyum Watson</p>    
+                                        <div>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star unrated_star"></i>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><p class="cancelled_status">Cancled</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Edit</a>
+                                        <a href="">Reschedule</a>
+                                        <a href="">Cancel</a>
+                                        <a href="">Change SP</a>
+                                        <a href="">Escalate</a>
+                                        <a href="">History Log</a>
+                                        <a href="">Download Invoice</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>323436</td>
+                            <td>
+                                <div class="service_date">
+                                    <div>
+                                        <img src="../assets/img/table/calendar.png" alt="">
+                                        <p>09/04/2018</p>
+                                    </div>
+                                    <div>
+                                        <img src="../assets/img/table/time.png" alt="">
+                                        <p>12:00 - 18:00</p>
+                                    </div>    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer_details">
+                                    <p>David Bough</p>
+                                    <div>
+                                        <img src="../assets/img/table/home.png" alt="">
+                                        <p>Musterstrabe 5,12345 Bonn</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="service_provider">
+                                    <img class="hat_style" src="../assets/img/table/hat.png" alt="">
+                                    <div>
+                                        <p>Lyum Watson</p>    
+                                        <div>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star unrated_star"></i>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><p class="completed_status">Completed</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Edit</a>
+                                        <a href="">Reschedule</a>
+                                        <a href="">Cancel</a>
+                                        <a href="">Change SP</a>
+                                        <a href="">Escalate</a>
+                                        <a href="">History Log</a>
+                                        <a href="">Download Invoice</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>323436</td>
+                            <td>
+                                <div class="service_date">
+                                    <div>
+                                        <img src="../assets/img/table/calendar.png" alt="">
+                                        <p>09/04/2018</p>
+                                    </div>
+                                    <div>
+                                        <img src="../assets/img/table/time.png" alt="">
+                                        <p>12:00 - 18:00</p>
+                                    </div>    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer_details">
+                                    <p>David Bough</p>
+                                    <div>
+                                        <img src="../assets/img/table/home.png" alt="">
+                                        <p>Musterstrabe 5,12345 Bonn</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="service_provider">
+                                    <img class="hat_style" src="../assets/img/table/hat.png" alt="">
+                                    <div>
+                                        <p>Lyum Watson</p>    
+                                        <div>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star unrated_star"></i>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><p class="cancelled_status">Canceled</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Edit</a>
+                                        <a href="">Reschedule</a>
+                                        <a href="">Cancel</a>
+                                        <a href="">Change SP</a>
+                                        <a href="">Escalate</a>
+                                        <a href="">History Log</a>
+                                        <a href="">Download Invoice</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>323436</td>
+                            <td>
+                                <div class="service_date">
+                                    <div>
+                                        <img src="../assets/img/table/calendar.png" alt="">
+                                        <p>09/04/2018</p>
+                                    </div>
+                                    <div>
+                                        <img src="../assets/img/table/time.png" alt="">
+                                        <p>12:00 - 18:00</p>
+                                    </div>    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer_details">
+                                    <p>David Bough</p>
+                                    <div>
+                                        <img src="../assets/img/table/home.png" alt="">
+                                        <p>Musterstrabe 5,12345 Bonn</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="service_provider">
+                                    <img class="hat_style" src="../assets/img/table/hat.png" alt="">
+                                    <div>
+                                        <p>Lyum Watson</p>    
+                                        <div>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star rated_star"></i>
+                                            <i class="fas fa-star unrated_star"></i>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><p class="completed_status">Completed</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Edit</a>
+                                        <a href="">Reschedule</a>
+                                        <a href="">Cancel</a>
+                                        <a href="">Change SP</a>
+                                        <a href="">Escalate</a>
+                                        <a href="">History Log</a>
+                                        <a href="">Download Invoice</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="admin_tab_content">
+                <div class="user_management">
+                    <div>
+                        <p>User Management</p>
+                        <button class="add_new_user_btn"><i class="fas fa-plus"></i> Add New User</button>
+                    </div>
+                    <div>
+                        <select class="select" name="" id="">
+                            <option value="">User Name</option>
+                        </select>
+                        <select class="select" name="" id="">
+                            <option value="">User Role</option>
+                        </select>
+                        <div class="phone_number">
+                            <label for="">+46</label>
+                            <input type="text" placeholder="Phone Number">
+                        </div>
+                        <input class="input" type="text" placeholder="Zip Code">
+                        <button class="search_btn">Search</button>
+                        <button class="clear_btn">Clear</button>
+                    </div>
+                </div><!-- END_USER_MANAGEMENT -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>User Type</th>
+                            <th>Role</th>
+                            <th>Postal Code</th>
+                            <th>City</th>
+                            <th>Radius</th>
+                            <th>User Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>Lyum watson</td>
+                            <td>Call Center</td>
+                            <td>Inquiry Manager</td>
+                            <td>123456</td>
+                            <td>Berlin</td>
+                            <td></td>
+                            <td><p class="active_status">Active</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Active</a>
+                                        <a href="">Disactive</a>
+                                        <a href="">Service History</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>Lyum watson</td>
+                            <td>Call Center</td>
+                            <td>Inquiry Manager</td>
+                            <td>123456</td>
+                            <td>Berlin</td>
+                            <td></td>
+                            <td><p class="active_status">Active</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Active</a>
+                                        <a href="">Disactive</a>
+                                        <a href="">Service History</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>Lyum watson</td>
+                            <td>Call Center</td>
+                            <td>Inquiry Manager</td>
+                            <td>123456</td>
+                            <td>Berlin</td>
+                            <td></td>
+                            <td><p class="active_status">Active</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Active</a>
+                                        <a href="">Disactive</a>
+                                        <a href="">Service History</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>Lyum watson</td>
+                            <td>Call Center</td>
+                            <td>Inquiry Manager</td>
+                            <td>123456</td>
+                            <td>Berlin</td>
+                            <td></td>
+                            <td><p class="active_status">Active</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Active</a>
+                                        <a href="">Disactive</a>
+                                        <a href="">Service History</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>Lyum watson</td>
+                            <td>Call Center</td>
+                            <td>Inquiry Manager</td>
+                            <td>123456</td>
+                            <td>Berlin</td>
+                            <td></td>
+                            <td><p class="active_status">Active</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Active</a>
+                                        <a href="">Disactive</a>
+                                        <a href="">Service History</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>Lyum watson</td>
+                            <td>Call Center</td>
+                            <td>Inquiry Manager</td>
+                            <td>123456</td>
+                            <td>Berlin</td>
+                            <td></td>
+                            <td><p class="active_status">Active</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Active</a>
+                                        <a href="">Disactive</a>
+                                        <a href="">Service History</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>Lyum watson</td>
+                            <td>Call Center</td>
+                            <td>Inquiry Manager</td>
+                            <td>123456</td>
+                            <td>Berlin</td>
+                            <td></td>
+                            <td><p class="inactive_status">Inactive</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Active</a>
+                                        <a href="">Disactive</a>
+                                        <a href="">Service History</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>Lyum watson</td>
+                            <td>Call Center</td>
+                            <td>Inquiry Manager</td>
+                            <td>123456</td>
+                            <td>Berlin</td>
+                            <td></td>
+                            <td><p class="active_status">Active</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Active</a>
+                                        <a href="">Disactive</a>
+                                        <a href="">Service History</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>Lyum watson</td>
+                            <td>Call Center</td>
+                            <td>Inquiry Manager</td>
+                            <td>123456</td>
+                            <td>Berlin</td>
+                            <td></td>
+                            <td><p class="active_status">Active</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Active</a>
+                                        <a href="">Disactive</a>
+                                        <a href="">Service History</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>Lyum watson</td>
+                            <td>Call Center</td>
+                            <td>Inquiry Manager</td>
+                            <td>123456</td>
+                            <td>Berlin</td>
+                            <td></td>
+                            <td><p class="active_status">Active</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Active</a>
+                                        <a href="">Disactive</a>
+                                        <a href="">Service History</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- SINGLE_ROW -->
+                        <tr>
+                            <td>Lyum watson</td>
+                            <td>Call Center</td>
+                            <td>Inquiry Manager</td>
+                            <td>123456</td>
+                            <td>Berlin</td>
+                            <td></td>
+                            <td><p class="active_status">Active</p></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown_btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown_menu d_none">
+                                        <a href="">Active</a>
+                                        <a href="">Disactive</a>
+                                        <a href="">Service History</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><!-- END_USER_MANAGEMENT_TABLE -->
+            </div>
+
+            <div class="admin_copyright_line">
+                <p>©2018 Helperland. All rights reserved.</p>
+            </div><!-- END_FOOTER -->        
+        </div><!-- END_ADMIN_RIGHT -->
+    </main><!-- END_ADMIN_PANEL -->
+
+    <!-- CUSTOM_JAVASCRIPT -->
+	<script src="../assets/js/homenav.js"></script>
+	<script src="../assets/js/sidenav.js"></script>
+	<script src="../assets/js/navtabs.js"></script>
+	<script src="../assets/js/footer.js"></script>
+	<script src="../assets/js/accordion.js"></script>
+	<script src="../assets/js/dropdown.js"></script>
+	<script src="../assets/js/admintab.js"></script>
+
+</body>
+</html>

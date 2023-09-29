@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Home</title>    
+    <link rel="icon" href="assets/img/dark.jpg" type="image/gif" sizes="16x16">
+	<!------------------ CSS FILES ------------------>
+	<!-- Bootstrap v4.5.0 -->
+	<!-- FontAwesome v5.13.1 -->
+	<link rel="stylesheet" type="text/css" href='assets/lib/bootstrap/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href='assets/lib/fontawesome/css/all.min.css'>
+	<link rel="stylesheet" type="text/css" href='assets/css/index.css'>    
+    <link rel="stylesheet" type="text/css" href='assets/lib/swiper/swiper-bundle.css'>    
+    
+	<!------------------ JS FILES ------------------>
+	<script type="text/javascript" src='assets/lib/jquery.js'></script>
+    <script type="text/javascript" src='assets/lib/bootstrap/bootstrap.bundle.min.js'></script>
+	<script type="text/javascript" src='assets/lib/swiper/swiper-bundle.js'></script>
+    <script type="text/javascript" src='assets/lib/sweetalert/sweetalert.min.js'></script> 
+<style>
+  	*{margin:0;padding:0;}
+    .swiper-container {
+	  z-index:1;
+	  margin-top:-5px;
+      width: 100%;
+      height: 450px;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide img{
+    	/*object-fit:contain;*/
+    	width:100%;
+    	height:100%;
+	}
+	@media screen and (max-width:767px){
+    	.swiper-container{
+			height:200px; 	
+    	} 
+    	.swiper-slide img{
+    		height:100%;
+    		object-fit:cover;
+		}
+	} 
+</style>
+</head>
+<body>
+	
+<!-- Backlight -->
+<div class='random'></div>
+<!-- SideNav --------->
+<aside class="sidenav">
+	<ul>
+		<li> <img src="./assets/img/ronaldo.jpg"><p>Pratik</p> </li>
+     	<li> <a href='/account' ><i class='far fa-user'></i>Your Profile</a></li>
+     	<li> <a href='/account'><i class='fas fa-lock'></i>Change Password</a></li>
+     	<li> <a href='/cart'><i class="fas fa-shopping-cart"></i><span class="mr-2 badge badge-secondary cart_items"></span>Cart</a></li>
+    	<li> <a href='/orders'><i class='fas fa-tag'></i>Orders</a></li>
+    	<li> <a href='/account'><i class='fas fa-map-marker-alt'></i>Address</a></li>
+    	<li> <a href='/account'><i class='far fa-trash-alt'></i>Delete Account</a></li>
+     	<li> <a href='/signout'><i class='fas fa-sign-out-alt'></i>Logout</a></li>
+	</ul>
+</aside>
+
+<!-- Header -->
+<header>
+
+	<!-- Sidenav Button -->
+	<button class='user_sidenav_btn'><i class="fas fa-bars"></i></button>
+	
+	<!-- Cart Button For 992px Responsive -->
+	<a class="only_nav_cart mt-2 mr-3" href='/cart/'><i class='fas fa-shopping-cart'><span class="badge badge-secondary rounded-circle cart_items">3</span></i></a>
+
+	<!-- Navbar -->
+	<nav class="container-lg container-md container-fluid user_nav px-4 px-md-0">
+
+	  	<!-- Logo -->
+	  	<a class="logo" href="/">My<span>Books</span></a>
+
+	  	<button class="filter_btn btn text-light">Filter Books <i class="fas fa-angle-down"></i></button>
+
+		<!-- Search -->
+		<form class="search_container">
+			<select onchange="ChangePlaceholder(this.value);">
+				<option value="name">Book Name</option>
+				<option value="author">Author</option>
+				<option value="isbn">ISBN NO.</option>
+				<option value="publication">Publication</option>
+			</select>
+			<input type="text" placeholder="Search by Title" class='search'> 
+			<button><i class="fas fa-search"></i></button>
+		</form><!-- End Search_Container -->
+  		
+  		<!-- Menu -->
+		<div class="menu">
+		    <ul>
+		    	<li> <a href="/cart"> <i class="fas fa-shopping-cart"> <span class="badge badge-secondary rounded-circle cart_items">3</span> </i> </a> </li>
+				<li> <a href="/orders"><i class="fas fa-truck"></i></a> </li>
+				<!-- <li class="ml-3"><a class="d-flex align-items-center" href='/signout'><i class='fas fa-sign-out-alt mr-1'></i><span class="h6 mb-1">LOGOUT</span></a></li> -->
+				<li><a href="/login"><span class="h6">LOGIN</span></a></li>
+		    </ul>
+		</div><!-- End Menu -->
+	</nav><!-- End Navbar -->
+
+	<div class="filter">
+
+		<div class="f_category">
+			<h6>Category</h6>
+			<select>
+				<option value="">Small</option>
+				<option value="">Big</option>
+				<option value="">Average</option>
+			</select>
+		</div>
+
+		<div class="f_sub_category">
+			<h6>Sub Category</h6>
+			<div>
+				<p>Field</p>
+				<select name="" id="">
+					<option value="">Option1</option>
+					<option value="">Option1</option>
+					<option value="">Option1</option>
+				</select>
+			</div>
+			<div>
+				<p>Branch</p>
+				<select name="" id="">
+					<option value="">Option1</option>
+					<option value="">Option1</option>
+					<option value="">Option1</option>
+				</select>
+			</div>
+			<div>
+				<p>University</p>
+				<select>
+					<option value="">Small</option>
+					<option value="">Big</option>
+					<option value="">Average</option>
+				</select>	
+			</div>
+			<div>
+				<p>Semester/Standard</p>
+				<select name="" id="">
+					<option value="">Stander1</option>
+					<option value="">Stander2</option>
+					<option value="">Semester1</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="f_lang">
+			<h6>Language</h6>
+			<div><label for="">Hindi</label><input type="checkbox"></div>
+			<div><label for="">English</label><input type="checkbox"></div>
+			<div><label for="">Gujarati</label><input type="checkbox"></div>
+			<div><label for="">German</label><input type="checkbox"></div>
+		</div>
+
+		<div class="f_earlier">
+			<h6>Earlier Published</h6>
+			<div><label for="">5 Days Ago</label><input type="checkbox"></div>
+			<div><label for="">4 Days Ago</label><input type="checkbox"></div>
+			<div><label for="">3 Days Ago</label><input type="checkbox"></div>
+		</div>
+
+		<div class="f_format">
+			<h6>Format</h6>
+			<div><label>Paper Cover</label><input type="checkbox"></div>
+			<div><label>Softcopy (PDF)</label><input type="checkbox"></div>
+		</div>
+
+		<div class="f_condition">
+			<h6>Condition</h6>
+			<div><label>Used</label><input type="radio"></div>
+			<div><label>New</label><input type="radio"></div>
+			<div><label>Both</label><input type="checkbox"></div>
+		</div>
+
+		<div class="f_price">
+			<h6>Price</h6>
+			<div>
+				<input type="text" placeholder="From Low">
+				<input type="text" placeholder="To High">
+			</div>
+		</div>
+
+		<div class="f_rating">
+			<h6>Rating</h6>
+			<div>
+				<a href="">
+					<i class="fas fa-star text-warning"></i>
+					<i class="fas fa-star text-warning"></i>
+					<i class="fas fa-star text-warning"></i>
+					<i class="fas fa-star text-warning"></i>
+					<i class="fas fa-star text-warning"></i>
+				</a>
+				<a href="">
+					<i class="fas fa-star text-warning"></i>
+					<i class="fas fa-star text-warning"></i>
+					<i class="fas fa-star text-warning"></i>
+					<i class="fas fa-star text-warning"></i>
+					<i class="far fa-star text-warning"></i>
+				</a>
+				<a href="">
+					<i class="fas fa-star text-warning"></i>
+					<i class="fas fa-star text-warning"></i>
+					<i class="fas fa-star text-warning"></i>
+					<i class="far fa-star text-warning"></i>
+					<i class="far fa-star text-warning"></i>
+				</a>
+				<a href="">
+					<i class="fas fa-star text-warning"></i>
+					<i class="fas fa-star text-warning"></i>
+					<i class="far fa-star text-warning"></i>
+					<i class="far fa-star text-warning"></i>
+					<i class="far fa-star text-warning"></i>
+				</a>
+				<a href="">
+					<i class="fas fa-star text-warning"></i>
+					<i class="far fa-star text-warning"></i>
+					<i class="far fa-star text-warning"></i>
+					<i class="far fa-star text-warning"></i>
+					<i class="far fa-star text-warning"></i>
+				</a>
+				
+			</div>
+		</div>
+		
+		<div class="f_discount">
+			<h6>Discount</h6>
+			<div><label>80% and above 406</label><input type="checkbox"></div>
+			<div><label>70% and above 1949</label><input type="checkbox"></div>
+			<div><label>60% and above 4199</label><input type="checkbox"></div>
+			<div><label>50% and above 5708</label><input type="checkbox"></div>
+			<div><label>40% and above 6279</label><input type="checkbox"></div>
+		</div>
+
+	</div>
+
+</header><!-- End Header -->
+
+
+
+<main>
+	<div class='account'>
+		<div class="a_left pt-4">
+		   <ul>
+		      <li><img src="./assets/img/ronaldo.jpg"><p>Pratik Jadav</p></li>
+		      <li><a href="#" onclick="Component('profile');">
+		      	<i class="far fa-user"></i>Your Profile</a></li>
+		      <li><a href="#" onclick="Component('password');">
+		      	<i class="fas fa-lock"></i>Change Password</a></li>
+		      <li><a href="/orders">
+		      	<i class="fas fa-tag"></i>Orders</a></li>
+		      <li><a href="#" onclick="Component('address');">
+		      	<i class="fas fa-map-marker-alt"></i>Address</a></li>
+		      <li><a href="#" onclick="Component('delete');">
+		      	<i class="far fa-trash-alt"></i>Delete Account</a></li>
+		      <li><a href="/signout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+		   </ul>
+		</div>
+
+		<div class="a_right ml-md-3 mt-md-4 p-4">
+		
+			<form class="person_info" action="account/update/profile" method="post" enctype="multipart/form-data">
+				<h5 class='mb-3'>Your Information</h5>
+				<div><label>Your Name</label> <input type="text" name="name" value="Pratik Jadav" ></div>
+				<div><label>Email Address</label><input type="text" name="email" value="pratik@gmail.com" disabled></div>
+				<div><label>Mobile</label><input type="text" name="mobile" value="789065321" ></div>
+				<div class="custom-file"><input class="custom-file-input" type="file" name="img" id="img"><label for="img" class="custom-file-label">Choose Profile Image</label></div>
+				<div><input class="btn btn-outline-primary" type="submit" value="Change / Update"></div>
+			</form>
+
+			<form class="change_pswd" action="account/update/password" method="POST">
+				<h5 class='mb-3'>Change Password</h5>
+				<input type="password" name="pswd" placeholder="Old Password" required>
+				<input type="password" name="npswd" placeholder="New Password" required>
+				<input type="password" name="cpswd" placeholder="Confirm Password" required>
+				<input class="btn btn-outline-primary" type="submit" value="Change">
+			</form>	
+
+			<form class="person_adrs" action="account/action/address" method="POST">
+				<h5 class="mb-3">Address</h5>
+				<div> <label>State</label> <select name="state" onchange="find_city(this.value)">
+					<option value="{{$s->state}}">Gujarat</option>
+					<option value="{{$s->state}}">Gujarat</option>
+					<option value="{{$s->state}}">Gujarat</option>
+					<option value="{{$s->state}}">Gujarat</option>
+					<option value="{{$s->state}}">Gujarat</option>
+				</select> </div>
+				<div> <label>City</label> <select name="city">
+					<option value="{{$c->city}}">idar</option>
+					<option value="{{$c->city}}">idar</option>
+					<option value="{{$c->city}}">idar</option>
+					<option value="{{$c->city}}">idar</option>
+					<option value="{{$c->city}}">idar</option>
+					<option value="{{$c->city}}">idar</option>
+				</select> </div>
+				<div> <label>Delivery Address</label> <textarea name="address" required>20, this address, near this road</textarea> </div>
+				<div> <label>Zip Code</label> <input type="text" name="zcode" value="383430" required> </div>
+				<div> <input type="submit" name="submit_btn" class="btn btn-outline-primary" value="ADD">
+				</div>
+			</form>
+
+			<form class="del_account" action="account/delete" method="POST">			
+				<h5 class="mb-3">Account Delete</h5>
+				<textarea name="del_reason" placeholder="Why You Delete the Account?" required></textarea>
+				<input type="password" placeholder="Password" name="pswd" required>
+				<input type="submit" class="btn btn-danger border-0"  value="Delete">
+			</form>
+
+
+		</div><!-- End of A-Right -->
+	</div><!-- End of Account -->
+</main>
+<script>
+
+	function Component(val){
+		$('.a_right').children('form').addClass('d-none');
+		if(val=='profile')
+			$('.person_info').removeClass('d-none');
+		else if(val=='password')
+			$('.change_pswd').removeClass('d-none');
+		else if(val=='address')
+			$('.person_adrs').removeClass('d-none');
+		else if(val=='delete')
+			$('.del_account').removeClass('d-none');	
+	}
+	Component('profile');
+
+	const db_state = `{{$user->state}}`;
+	const db_city = `{{$user->city}}`;
+	if(db_state!="")
+		$('[name="state"]').val(db_state).change();
+		
+	//This function we have to fix in livewire...
+	if(db_city!=""){
+		setTimeout(function(){
+			$('[name="city"]').val(db_city).change();
+		},2000);		
+	}
+
+	function find_city(state){
+		const city_option = $('[name="city"]')[0];
+		$.ajax({
+			url:'/find_city/'+state, 
+			method: 'GET',
+			success:function(res){
+				const city = JSON.parse(res);
+				city_option.innerHTML = "";
+				for(let i = 0; i< city.length; i++){
+					city_option.innerHTML += "<option value='"+city[i]['city']+"'>"+city[i]['city']+"</option>";				
+				}
+			}
+		});
+	}
+
+</script>
+
+
+
+<!-- Footer -->
+<footer>
+	<div class="container">
+		<div class="row">			
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<div class="footer_content">
+					<p data-target="#f_div_1" data-toggle="collapse">AboutUs	
+						<i class="fas fa-angle-down d-sm-none"></i>
+					</p>
+					<div id="f_div_1">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quam debitis officia ratione maxime dolor. Itaque molestias maiores nesciunt suscipit doloribus eius harum facere nihil vel ipsa.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-4 col-sm-6">
+				<div class="footer_content">
+					<p data-target="#f_div_2" data-toggle="collapse">Useful Links
+						<i class="fas fa-angle-down d-sm-none"></i>
+					</p>	
+					<ul id="f_div_2" >
+						<li><a href="#">AboutUs</a></li>
+						<li><a href="#">ContactUs</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Support</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-4 col-sm-6">
+				<div class="footer_content">
+					<p data-target="#f_div_3" data-toggle="collapse">Follow Us
+						<i class="fas fa-angle-down  d-sm-none"></i>
+					</p>
+					<ul id="f_div_3" >
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">Instagram</a></li>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="#">Linked-in</a></li>
+					</ul>
+				</div> 
+			</div>
+			
+			<div class="col-lg-5 col-md-12 col-sm-6">
+				<div class="footer_content">
+					<p data-target="#f_div_4" data-toggle="collapse">Get in Touch
+						<i class="fas fa-angle-down  d-sm-none"></i>
+					</p>
+					<div id="f_div_4">
+						<form>
+							<input type="Email" placeholder="Enter Email Address">
+							<input type="submit">
+						</form>	
+					</div>
+				</div>
+			</div>
+		</div><!-- End Row -->
+	</div><!-- End Container -->
+</footer>
+
+<script>
+
+	if ($(window).width() <= 575) {
+		$('#f_div_1').addClass('collapse');
+		$('#f_div_2').addClass('collapse');
+		$('#f_div_3').addClass('collapse');
+		$('#f_div_4').addClass('collapse');
+	}
+	else{
+		$('#f_div_1').removeClass('collapse');
+		$('#f_div_2').removeClass('collapse');
+		$('#f_div_3').removeClass('collapse');
+		$('#f_div_4').removeClass('collapse');	
+	}
+
+    function AddToCart(p_id){
+    	window.location.href = 'cart/item/add/'+p_id;
+    }
+	
+	$('.user_sidenav_btn').click(function(){
+		$('.sidenav').addClass('show_sidenav');
+		$('.random').addClass('backlight');
+		$('body').css('overflow','hidden');
+	});
+
+	$('.random').click(function(){
+		$('.random').removeClass('backlight');
+		$('.sidenav').removeClass('show_sidenav');
+		$('body').css('overflow','auto');
+	});	
+
+	function ChangePlaceholder(val){
+		if(val=='name') 
+			$(".search").attr("placeholder", "Search by Title");
+		else if(val=='isbn') 
+			$(".search").attr("placeholder", "Search by ISBN");
+		else if(val=='author') 
+			$(".search").attr("placeholder", "Search by Author");
+		else if(val=='publication') 
+			$(".search").attr("placeholder", "Search by Publication");
+	}	
+
+	var filter_btn_click = 0;
+	if($(window).width() >=992){
+		$('.filter_btn').click(function(){
+			if(filter_btn_click==0){
+				$('.filter').css('top','65px');
+				filter_btn_click = 1;
+			}
+			else{
+				$('.filter').css('top','-270px');
+				filter_btn_click = 0;
+			}
+		});
+	}
+	else{
+		$('.filter_btn').click(function(){
+			if(filter_btn_click==0){
+				$('.filter').css('top','110px');
+				filter_btn_click = 1;
+			}
+			else{
+				$('.filter').css('top','-270px');
+				filter_btn_click = 0;
+			}
+		});
+	}
+</script>
+</body>
+</html>

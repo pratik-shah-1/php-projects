@@ -1,0 +1,144 @@
+.cart_left{
+    width:calc(100% - 300px);//Because of Cart_right have 300px width...
+    height:100%;
+    margin-right:20px;
+    .cart_product{
+        padding:20px;
+        margin-bottom:20px;
+        border:0.5px solid lightgray;
+        border-radius:4px;
+        display:flex;
+        //height:200px;//Because of 20+20 padding top and bottom and 180px image....
+        //We remove the height because of if any book name of any name is bigger then their will be locha..
+        .cart_product_img{
+            img{
+                width:140px;
+                height:160px;//200 - 20 -20 
+                border-radius:4px;
+            }
+            button{display:none;}
+        }
+        .cart_product_info{
+            margin-left:20px;
+            width:100%;
+            display:grid;
+            grid-template-columns:1.5fr 1fr;
+            .cart_product_info_inner_1{
+                div{
+                    display:flex;
+                    align-items:center;
+                    padding-bottom:10px;
+                    p{
+                        margin:0;
+                        font-size:14px;
+                        &:first-child{
+                            width:70px;
+                            font-weight:500;
+                        }
+                        &:last-child{
+                            width:calc(100% - 70px);
+                        }
+                    }
+                    span{
+                        margin:0 10px 0 5px;
+                    }
+                    &:last-child{
+                        padding:0;
+                    }
+                }
+            }
+            .cart_product_info_inner_2{
+                display:grid;
+                grid-template-columns:1fr;
+                div{
+                    display:flex;
+                    align-items:center;
+                    justify-content:flex-end;
+                    padding:12px 0;                    
+                    p{
+                        margin:0;
+                        font-size:14px;
+                        font-weight:500;
+                    }
+                    &:nth-child(1){
+                        padding-top:0;
+                        button,input{
+                            width:25px;
+                            border:0.5px solid lightgray;
+                            font-size:14px;
+                        }
+                        input{
+                            text-align:center;
+                            border-left:0;
+                            border-right:0;
+                            font-weight:500;
+                        }
+                    }
+                    &:nth-child(2){
+                        button{
+                            border:0;
+                            padding:3px 7px;
+                            border-radius: 4px;
+                            &:hover{color:red;background-color:#eee;}
+                        }
+                    }
+                    &:nth-child(4){//This is Last Div...
+                        padding:5px 0 0px;
+                        p{text-align:right;}
+                    }
+                }    
+            }//End Cart_product_info_inner-2
+        }//End Cart_product_info
+    }//End Cart_product
+    @media screen and (max-width:650px){
+        .cart_product{
+            height:auto;
+            flex-direction: column;
+            padding:10px;
+            .cart_product_img{
+                display:flex;
+                justify-content:center;
+                border:1px dashed gray;
+                border-radius:4px;
+                padding:20px;
+                background-color:whitesmoke;
+                img{
+                    width:150px;
+                    height:180px;
+                    box-shadow:4px 4px 4px lightgray;
+                }
+            }
+            .cart_product_info{
+                margin:10px 0 0;
+                grid-template-columns:1fr;
+                .cart_product_info_inner_1{
+                    div{                        
+                        p:last-child{
+                            display:flex;
+                            overflow: hidden;
+                        }
+                    }
+                }
+                .cart_product_info_inner_2{
+                    grid-template-columns:1fr 1fr 1fr;
+                    div{
+                        display:flex;
+                        justify-content:flex-start;
+                        align-items:center;
+                        padding:7px 0 !important;
+                        // border:0.5px solid black;
+                        &:nth-child(1){order:2;justify-content:flex-end;}
+                        &:nth-child(2){order:3;justify-content:flex-end;}
+                        &:nth-child(3){order:1;min-width:70px;}
+                        &:nth-child(4){
+                            order:4; grid-column:1/4;
+                            p{
+                                font-weight:normal;
+                            }
+                        }//doing this we have to give display flex or gird property to parent div...
+                    }
+                }//End of Cart_product_info_inner_2
+            }//cart_product_info
+        }//cart_product...
+    }//End of responsive...
+}//End Cart_left

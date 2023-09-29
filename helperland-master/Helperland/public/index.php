@@ -1,0 +1,19 @@
+<?php
+
+    // ENVIRONMENT VARIABLE...
+    require_once __DIR__."/../env/ENV.php";
+
+    // CONSTANT...
+    require_once __DIR__.'/../core/Constants.php';
+
+    // CONFIG...
+    require_once __DIR__.'/../core/Config.php';
+    
+    // GLOBAL FUNCTIONS...
+    require_once __DIR__.'/../core/Functions.php';
+        
+    // AUTOLOAD FUNCTIONS...
+    require_once __DIR__."/../core/Autoload.php";
+
+    // ROUTES...
+    require_once __DIR__."/../routes/Index.php";

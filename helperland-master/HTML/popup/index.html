@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Popup</title>
+	<!-- FAVICON -->
+	<link rel="icon" href="../assets/img/favicon/favicon.png" sizes="16x16" type="image/png">	
+	<!-- CSS -->
+	<link rel="stylesheet" href="../assets/css/index.css">
+	<!-- FONT-AWESOME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<!-- JQUERY -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+    <!-- --------------------------------------------------- -->
+						<!-- FOR_BACKLIGHT_CONTAIN -->
+	<!-- --------------------------------------------------- -->
+	<div class="backlight_container"></div>
+
+	<div class="model_btn">
+        <button onclick="open_model('login')">LOGIN</button>
+        <button onclick="open_model('otp')">OTP</button>
+        <button onclick="open_model('forgot_password')">FORGOT PASSOWORD</button>
+        <button onclick="open_model('set_new_password')">SET NEW PASSOWORD</button>
+        <button onclick="open_model('accept_service_request')">Accept Service</button>
+        <button onclick="open_model('edit_service_request')">Edit Service</button>
+        <button onclick="open_model('cancel_service_request')">Cancel Service</button>
+        <button onclick="open_model('reschedule_service_request')">Reschedule Service Request</button>
+        <button onclick="open_model('add_address')">Add Address</button>
+        <button onclick="open_model('edit_address')">Edit Address</button>
+        <button onclick="open_model('service_details')">Service Details</button>
+        <button onclick="open_model('rating')">Rating</button>
+        <button onclick="open_model('included_services')">Included Services</button>
+    </div>
+
+	<!-- WILL BE INTEGRATED IN BACKEND -->
+    <p style="text-align: center;font-size: 24px;color:lightgray;padding:50px 0 10px;">
+		<span>Popup Model</span>
+	</p>
+
+    <!-- --------------------------------------------------- -->
+				<!-- FORGOT-PASSWORD -->
+	<!-- --------------------------------------------------- -->
+	<div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- POPUP-MAIN -->
+		<div class="popup_main d_none" id="forgot_password_popup">
+			<p class="popup_title">Forgot Password</p>
+			<form class="forgot_password_popup_form" action="">
+				<div class="form_group">
+					<input class="input" type="text" placeholder="Email">
+					<div class="validation_message d_none">
+						<p>Please Enter your Email Address!!</p>
+					</div>
+				</div>
+				<button class="popup_btn">Send</button>
+				<a href="#" onclick="open_model('login')">Login Now</a>
+			</form>
+		</div>
+	</div>
+
+    <!-- --------------------------------------------------- -->
+				<!-- OTP -->
+	<!-- --------------------------------------------------- -->
+	<div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- POPUP-MAIN -->
+		<div class="popup_main d_none" id="otp_popup">
+			<p class="popup_title">OTP</p>
+			<form>
+				<div class="form_group">
+					<input class="input" type="text" placeholder="OTP">				
+				</div>
+				<button class="popup_btn">SUBMIT</button>
+			</form>
+		</div>
+	</div>
+
+    <!-- --------------------------------------------------- -->
+				<!-- LOGIN -->
+	<!-- --------------------------------------------------- -->
+	<div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- POPUP-MAIN -->
+		<div class="popup_main d_none" id="login_popup">
+			<p class="popup_title">Login</p>
+			<form class="login_popup_form" action="">
+				<div class="form_group">
+					<div class="input_icon">
+						<input class="input" type="text" placeholder="Email">
+						<label for=""><i class="fas fa-user"></i></label>
+					</div>
+					<div class="validation_message d_none">
+						<p>Please Enter Your Email Address</p>
+					</div>
+				</div>
+				<div class="form_group">
+					<div class="input_icon">
+						<input class="input" type="password" placeholder="Password">
+						<label for=""><i class="fas fa-lock"></i></label>
+					</div>
+					<div class="validation_message d_none">
+						<p>Please Enter Your Password</p>
+					</div>
+				</div>
+				<div>
+					<input type="checkbox">
+					<label class="label" for="">Remember Me</label>
+				</div>
+				<div>
+					<button class="popup_btn">Login</button>
+				</div>
+			</form>
+			<div class="login_popup_footer">
+				<a href="#" onclick="open_model('forgot_password')">Forgot Password?</a>
+				<p>Don't Have an Account? <a href="/customer/Registration.html">Create an Account</a></p>
+			</div><!-- END_LOGIN_POPUP_FOOTER -->
+		</div><!-- END_LOGIN_POPUP -->
+	</div>
+
+    <!-- --------------------------------------------------- -->
+				<!-- SET_NEW_PASSWORD -->
+	<!-- --------------------------------------------------- -->
+	<div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- SET_NEW_PASSOWORD -->
+		<div class="popup_main d_none" id="set_new_password_popup">
+			<p class="popup_title">SET NEW PASSWORD</p>
+			<form class="" action="">
+				<div class="form_group">
+					<label class="label" for="">New Password</label>
+					<input class="input" type="password">
+					<div class="validation_message d_none">
+						<p>Enter Your New Password</p>
+					</div>
+				</div>
+				<div class="form_group">
+					<label class="label" for="">Confirm Password</label>
+					<input class="input" type="password">					
+					<div class="validation_message d_none">
+						<p>Enter Your New Password</p>
+					</div>
+				</div>
+				<button class="popup_btn">Save</button>
+			</form>
+		</div>
+	</div>
+
+    <!-- --------------------------------------------------- -->
+				<!-- INCLUDED SERVICES -->
+	<!-- --------------------------------------------------- -->
+	<div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="included_services_close_btn">&times;</button>
+		<!-- INCLUDED_SERVICES -->
+		<div class="popup_main d_none" id="included_services_popup">
+			<!-- MAIN TITLE -->
+			<p>What cleaning included with us</p>
+			<div>
+				<!-- LIVING ROOM -->
+				<div>
+					<p>Living room and bedrooms</p>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Dust all accessible surfaces</p></div>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Wipe down all mirrors and glass fixtures</p></div>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Clean all floor surfaces</p></div>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Take out garbage and recycling</p></div>
+				</div>
+				<!-- BATHROOM -->
+				<div>
+					<p>Bathroom</p>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Wash and sanitize the toilet, shower, tub, sink</p></div>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Dust all accessible surfaces </p></div>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Wipe down all mirrors and glass fixtures</p></div>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Clean all floor surfaces</p></div>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Take out garbage and recycling</p></div>
+				</div>
+				<!-- KITCHEN -->
+				<div>
+					<p>Kitchen</p>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Dust all accessible surfaces</p></div>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Empty sink and load up dishwasher</p></div>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Wipe down exterior of stove, oven and fridge </p></div>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Clean all floor surfaces</p></div>
+					<div><img src="../assets/img/customer/book_service/included.png" alt=""><p>Take out garbage and recycling</p></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ---------------------------------- -->
+			<!-- EDIT_SERVICE_DETAILS -->
+	<!-- ---------------------------------- -->
+	<div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- SERVICE_DETAILS -->
+		<div  class="popup_main d_none" id="edit_service_request_popup">
+			<p class="popup_title">Edit Service Request</p>
+			<!-- DATE AND TIME -->
+			<div>
+				<div class="form_group">
+					<label class="label" for="">Date</label>
+					<input class="input" type="date" name="edit_service_date">
+					<div class="validation_message d_none">
+						<p>Enter Date!</p>
+					</div>
+				</div>
+				<div class="form_group">
+					<label class="label" for="">Time</label>
+					<input class="input" type="time" name="edit_service_time">
+					<div class="validation_message d_none">
+						<p>Enter Date!</p>
+					</div>
+				</div>
+			</div>
+			<!-- SERVICE ADDRESS -->
+			<div>
+				<p>Service Address</p>
+				<div class="form_group">
+					<label class="label" for="">Street Name</label>
+					<input class="input" type="text" name="edit_service_street_name">
+					<div class="validation_message d_none">
+						<p>Enter Date!</p>
+					</div>
+				</div>
+				<div class="form_group">
+					<label class="label" for="">House Number</label>
+					<input class="input" type="text" name="edit_service_house_number">
+					<div class="validation_message d_none">
+						<p>Enter Date!</p>
+					</div>
+				</div>
+				<div class="form_group">
+					<label class="label" for="">Postal Code</label>
+					<input class="input" type="text" name="edit_service_postal_code">
+					<div class="validation_message d_none">
+						<p>Enter Date!</p>
+					</div>
+				</div>
+				<div class="form_group">
+					<label class="label" for="">City</label>
+					<input class="input" type="text" name="edit_service_city">
+					<!-- <select class="select" name="">
+						<option value="">Select</option>
+					</select> -->
+					<div class="validation_message d_none">
+						<p>Enter Date!</p>
+					</div>
+				</div>
+			</div>
+			<!-- INVOICE ADDRESS -->
+			<div>
+				<p>Invoice Address</p>
+				<div class="form_group">
+					<label class="label" for="">Street Name</label>
+					<input class="input" type="text" name="edit_service_street_name2" readonly>
+					<div class="validation_message d_none">
+						<p>Enter Date!</p>
+					</div>
+				</div>
+				<div class="form_group">
+					<label class="label" for="">House Number</label>
+					<input class="input" type="text" name="edit_service_house_number2" readonly>
+					<div class="validation_message d_none">
+						<p>Enter Date!</p>
+					</div>
+				</div>
+				<div class="form_group">
+					<label class="label" for="">Postal Code</label>
+					<input class="input" type="text" name="edit_service_postal_code2" readonly>
+					<div class="validation_message d_none">
+						<p>Enter Date!</p>
+					</div>
+				</div>
+				<div class="form_group">
+					<label class="label" for="">City</label>
+					<input class="input" type="text" name="edit_service_city2" readonly>
+					<!-- <select class="select" name="">
+						<option value="">Select</option>
+					</select> -->
+					<div class="validation_message d_none">
+						<p>Enter Date!</p>
+					</div>
+				</div>
+			</div>
+			<!-- TEXTAREA -->
+			<div class="form_group">
+				<p>What do you want to reschedule service request?</p>
+				<textarea class="textarea" placeholder="What do you want to reschedule service request?" name=""></textarea>
+				<div class="validation_message d_none">
+					<p>Enter Date!</p>
+				</div>
+			</div>
+			<!-- TEXTAREA -->
+			<div class="form_group">
+				<p>Call center EMP Notes</p>
+				<textarea class="textarea" placeholder="Enter Notes" name=""></textarea>
+				<div class="validation_message d_none">
+					<p>Enter Date!</p>
+				</div>
+			</div>
+			<button class="update_btn">Update</button>
+		</div>
+	</div>
+
+	<!-- ---------------------------------- -->
+			<!-- ACCEPT-SERVICE-DETAILS -->
+	<!-- ---------------------------------- -->
+	<div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- SERVICE_DETAILS -->
+		<div  class="popup_main d_none" id="accept_service_request_popup">
+			<p class="popup_title">Service Details</p>
+			<div class=""><!-- FIRST DIV -->
+				<div>
+					<p>05/10/2021 | 08:00 - 11:30</p>
+					<p>Duration : <span>3.5Hours</span></p>
+				</div>
+				<div>
+					<p>Service Id : <span>8485</span></p>
+					<p>Extras : <span>Inside Cabinats</span></p>
+					<p>Total Amount : <span class="payment_text">87,50$</span></p>
+				</div>
+				<div>
+					<p>Customer Name : <span>Gaurang Patel</span></p>
+					<p>Service Address : <span>Koenigstrasse 112, 99897 Tambach-Dietharz </span></p>			
+					<p>Distance : <span>296km</span></p>
+				</div>
+				<div>
+					<p>Conmments : <span>I don't have pets</span></p>
+				</div>
+				<div class="table_btn_container">
+					<button class="accept_btn"><i class="fas fa-check"></i>Accept</button>
+				</div>		
+			</div>
+			<div><!-- SECOND DIV FOR MAP -->
+				<img src="../assets/img/static/contact/section_2/map.png" alt="">
+			</div>
+		</div>
+	</div>
+
+	<!-- ---------------------------------- -->
+			<!-- ADD ADDRESS -->
+	<!-- ---------------------------------- -->
+    <div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- EDIT_ADDRESS -->
+		<div class="popup_main d_none" id="add_address_popup">
+			<p class="popup_title">Add Address</p>
+			<div class="form_group">
+				<label class="label" for="">Steet Name</label>
+				<input class="input" type="text" name="add_address_street_name">
+				<div class="validation_message d_none">
+					<p>Enter Stree name!</p>
+				</div>
+			</div>	
+			<div class="form_group">
+				<label class="label" for="">House Number</label>
+				<input class="input" type="text" name="add_address_house_number">
+				<div class="validation_message d_none">
+					<p>Enter Stree name!</p>
+				</div>
+			</div>
+			<div class="form_group">
+				<label class="label" for="">Postal Code</label>
+				<input class="input" type="text" name="add_address_postal_code">
+				<div class="validation_message d_none">
+					<p>Enter Stree name!</p>
+				</div>
+			</div>
+			<div class="form_group">
+				<label class="label" for="">City</label>
+				<input class="input" type="text" name="add_address_city">
+				<div class="validation_message d_none">
+					<p>Enter Stree name!</p>
+				</div>
+			</div>
+			<div class="form_group">
+				<label class="label" for="">Phone Number</label>
+				<div class="phone_number" >
+					<label for="">+49</label>
+					<input type="text" name="add_address_phone">
+				</div>
+				<div class="validation_message d_none">
+					<p>Enter Stree name!</p>
+				</div>
+			</div>
+			<button class="popup_btn">Add</button>
+		</div>
+	</div>
+
+	<!-- ---------------------------------- -->
+			<!-- EDIT ADDRESS -->
+	<!-- ---------------------------------- -->
+    <div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- EDIT_ADDRESS -->
+		<div class="popup_main d_none" id="edit_address_popup">
+			<p class="popup_title">Edit Address</p>
+			<div class="form_group">
+				<label class="label" for="">Steet Name</label>
+				<input class="input" type="text" name="edit_address_street_name">
+				<div class="validation_message d_none">
+					<p>Enter Stree name!</p>
+				</div>
+			</div>	
+			<div class="form_group">
+				<label class="label" for="">House Number</label>
+				<input class="input" type="text" name="edit_address_house_number">
+				<div class="validation_message d_none">
+					<p>Enter Stree name!</p>
+				</div>
+			</div>
+			<div class="form_group">
+				<label class="label" for="">Postal Code</label>
+				<input class="input" type="text" name="edit_address_postal_code">
+				<div class="validation_message d_none">
+					<p>Enter Stree name!</p>
+				</div>
+			</div>
+			<div class="form_group">
+				<label class="label" for="">City</label>
+				<input class="input" type="text" name="edit_address_city">
+				<div class="validation_message d_none">
+					<p>Enter Stree name!</p>
+				</div>
+			</div>
+			<div class="form_group">
+				<label class="label" for="">Phone Number</label>
+				<div class="phone_number" name="edit_address_phone">
+					<label for="">+49</label>
+					<input type="text">
+				</div>
+				<div class="validation_message d_none">
+					<p>Enter Stree name!</p>
+				</div>
+			</div>
+			<button class="popup_btn">Edit</button>
+		</div>
+	</div>
+
+	<!-- ---------------------------------- -->
+			<!-- RATING-POPUP -->
+	<!-- ---------------------------------- -->
+	<div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- RATING_POPUP -->
+		<div id="rating_popup" class="popup_main d_none">
+			<!-- ON RATE SERVICE PROVIDER  -->
+			<div class="service_provider">
+				<img class="hat_style" src="../assets/img/table/hat.png" alt="">
+				<div>
+					<p>Lyum Watson</p>    
+					<div>
+						<i class="fas fa-star rated_star"></i>
+						<i class="fas fa-star rated_star"></i>
+						<i class="fas fa-star rated_star"></i>
+						<i class="fas fa-star rated_star"></i>
+						<i class="fas fa-star rated_star"></i>
+						<span>5</span>
+					</div>
+				</div>
+			</div><!-- END-SERVICE-PROVIDER -->
+			<div class="rate_type">
+				<div class="rating_container">
+					<p>On Time Arriaval</p>    
+					<div class="rating_div">
+						<input type="radio" id="arriaval_rating_5" name="arriaval_rating" value="5">
+						<label for="arriaval_rating_5"><i class="fas fa-star unrated_star"></i></label>    
+						<input type="radio" id="arriaval_rating_4" name="arriaval_rating" value="4">
+						<label for="arriaval_rating_4"><i class="fas fa-star unrated_star"></i></label>
+						<input type="radio" id="arriaval_rating_3" name="arriaval_rating" value="3">
+						<label for="arriaval_rating_3"><i class="fas fa-star unrated_star"></i></label>
+						<input type="radio" id="arriaval_rating_2" name="arriaval_rating" value="2">
+						<label for="arriaval_rating_2"><i class="fas fa-star unrated_star"></i></label>
+						<input type="radio" id="arriaval_rating_1" name="arriaval_rating" value="1">
+						<label for="arriaval_rating_1"><i class="fas fa-star unrated_star"></i></label>
+					</div>
+				</div>
+				<div class="rating_container">
+					<p>Friendly</p>    
+					<div class="rating_div">
+						<input type="radio" id="friendly_rating_5" name="friendly_rating" value="5">
+						<label for="friendly_rating_5"><i class="fas fa-star unrated_star"></i></label>    
+						<input type="radio" id="friendly_rating_4" name="friendly_rating" value="4">
+						<label for="friendly_rating_4"><i class="fas fa-star unrated_star"></i></label>
+						<input type="radio" id="friendly_rating_3" name="friendly_rating" value="3">
+						<label for="friendly_rating_3"><i class="fas fa-star unrated_star"></i></label>
+						<input type="radio" id="friendly_rating_2" name="friendly_rating" value="2">
+						<label for="friendly_rating_2"><i class="fas fa-star unrated_star"></i></label>
+						<input type="radio" id="friendly_rating_1" name="friendly_rating" value="1">
+						<label for="friendly_rating_1"><i class="fas fa-star unrated_star"></i></label>
+					</div>
+				</div>
+				<div class="rating_container">
+					<p>Quality of Service</p>    
+					<div class="rating_div">
+						<input type="radio" id="quality_rating_5" name="quality_rating" value="5">
+						<label for="quality_rating_5"><i class="fas fa-star unrated_star"></i></label>    
+						<input type="radio" id="quality_rating_4" name="quality_rating" value="4">
+						<label for="quality_rating_4"><i class="fas fa-star unrated_star"></i></label>
+						<input type="radio" id="quality_rating_3" name="quality_rating" value="3">
+						<label for="quality_rating_3"><i class="fas fa-star unrated_star"></i></label>
+						<input type="radio" id="quality_rating_2" name="quality_rating" value="2">
+						<label for="quality_rating_2"><i class="fas fa-star unrated_star"></i></label>
+						<input type="radio" id="quality_rating_1" name="quality_rating" value="1">
+						<label for="quality_rating_1"><i class="fas fa-star unrated_star"></i></label>
+					</div>
+				</div>                        
+			</div>
+			<div class="rating_feedback">
+				<p>Feedback on Service Provider</p>
+				<textarea class="textarea" name="rating_feedback"></textarea>
+				<button class="popup_btn">Submit</button>
+			</div>
+		</div><!-- END-RATING POPUP -->
+	</div><!-- END-MODEL -->
+
+	<script>
+		$('[name="quality_rating"]').click(()=>{
+            const quality_rating = $('[name="quality_rating"]:checked').val();
+			console.log(quality_rating);
+        });
+
+        $('[name="friendly_rating"]').change(()=>{
+            const friendly_rating = $('[name="friendly_rating"]:checked').val();
+			console.log(friendly_rating);
+        });
+
+        $('[name="arrival_rating"]').change(()=>{
+            const arrival_rating = $('[name="arrival_rating"]:checked').val();
+			console.log(arrival_rating);
+        });
+	</script>
+
+	<!-- ---------------------------------- -->
+			<!-- CANCEL_SERVICE_REQUEST -->
+	<!-- ---------------------------------- -->
+	<div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- CANCEL_SERVICE_REQUEST -->
+		<div class="popup_main d_none" id="cancel_service_request_popup">
+			<p class="popup_title">Cancel Service Request</p>
+			<div class="form_group">
+				<label class="label" for="">Why you want to cancel the service request?</label>
+				<textarea class="textarea" name="cancel_service_reason"></textarea>
+				<div class="validation_message d_none">
+					<p>VALIDATON MESSAGE!</p>
+				</div>
+			</div>
+			<button class="popup_btn">Cancel Now</button>
+		</div>
+	</div>
+
+	<!-- ---------------------------------- -->
+			<!-- RESCHEDULE SERVICE -->
+	<!-- ---------------------------------- -->
+	<div class="model active_model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- RESCHEDULE_SERVICE_REQUEST -->
+		<div class="popup_main" id="reschedule_service_request_popup">
+			<p class="popup_title">Reschedule Service Request</p>
+			<div class="form_group">
+				<label class="label" for="">Select New Date & Time</label>
+				<div>
+					<input class="input" type="date" name="reschedule_service_date">
+					<input class="input" type="time" name="reschedule_service_time">
+				</div>
+				<div class="validation_message d_none">
+					<p>Please Enter date and Time!</p>
+				</div>
+				<button class="popup_btn">Update</button>
+			</div>
+		</div>
+	</div>
+		
+	<!-- ---------------------------------- -->
+			<!-- SERVICE DETAILS -->
+	<!-- ---------------------------------- -->
+	<div class="model">
+        <!-- MODEL_CLOSE -->
+        <button class="model_close_btn">&times;</button>
+		<!-- SERVICE_DETAILS -->
+		<div  class="popup_main d_none" id="service_details_popup">
+			<p class="popup_title">Service Details</p>
+			<div>
+				<p>05/10/2021 | 08:00 - 11:30</p>
+				<p>Duration : <span>3.5Hours</span></p>
+			</div>
+			<div>
+				<p>Service Id : <span>8485</span></p>
+				<p>Extras : <span>Inside Cabinats</span></p>
+				<p>Net Amout : <span class="price_text">87,50$</span></p>
+			</div>
+			<div>
+				<p>Service Address : <span>Koenigstrasse 112, 99897 Tambach-Dietharz </span></p>			
+				<p>Billing Address : <span>Same as Cleaning Address</span></p>
+				<p>Phone : <span>+49 9955648797</span></p>
+				<p>Email : <span>patel2128@gmail.com</span></p>
+			</div>
+			<div>
+				<p>Conmments</p>
+			</div>
+			<div class="table_btn_container">
+				<button class="reschedule_btn"><i class="fas fa-redo-alt"></i> Reschdule</button>
+				<button class="cancel_btn"><i class="fas fa-times"></i> Cancel</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- CUSTOM_JAVASCRIPT -->
+	<script src="../assets/js/homenav.js"></script>
+	<script src="../assets/js/sidenav.js"></script>
+	<script src="../assets/js/navtabs.js"></script>
+	<script src="../assets/js/footer.js"></script>
+	<script src="../assets/js/accordion.js"></script>
+	<script src="../assets/js/dropdown.js"></script>
+	<script src="../assets/js/model.js"></script>
+	<script src="../assets/js/validation.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+// -------------------USER_MANAGEMENT--------------------
+
+.user_management{
+    display: flex;
+    flex-direction: column;
+    div:first-child{
+        padding-top: 24px;
+        padding-bottom:10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        p{
+            font-size: 22px;
+            font-weight: bold;
+            color:$admin_top_section_text;
+        }
+    }
+    div:last-child{// INPUT AND BUTTON CONTIANER DIV...
+        padding:20px 15px;
+        padding-bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: white;
+        border-radius: 4px;
+        input, select, button{
+            width:200px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            &:focus, &:hover{
+                border: 1px solid $admin_top_outline;
+            }
+        }
+        .phone_number{
+            width:200px;
+            height:46px;
+            margin-right: 15px;
+            input{
+                margin:0;
+            }
+        }
+    }
+}
+
+// -------------------SERVICE_REQUIRES--------------------
+
+.service_requests{
+    div:first-child{
+        padding-top: 30px;
+        p{
+            font-size: 22px;
+            font-weight: bold;
+            color:$admin_top_section_text;
+        }
+    }
+    div:last-child{
+        margin-top: 14px;
+        background-color: white;
+        padding:20px 15px;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        input, select, button{
+            width:180px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            &:focus, &:hover{
+                border: 1px solid $admin_top_outline;
+            }
+        }
+        .from_date,
+        .to_date{
+            margin-bottom: 15px;
+            input{
+                margin-bottom: 0;
+            }
+        }
+    }
+}

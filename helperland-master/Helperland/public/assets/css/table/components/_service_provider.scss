@@ -1,0 +1,40 @@
+.service_provider{
+    display: flex;
+    align-items: center;
+    padding:0 !important;
+    & > div{// NAME_P + RATE_DIV
+        display: flex;
+        flex-direction: column;
+        p{
+            margin:0;
+            padding-bottom: 6px;
+        }
+        div{// RATING DIV
+            display: flex;
+            i{
+                margin:0 2px;
+            }
+            span{
+                margin-left: 4px;
+            }
+        }
+    }
+}
+
+.rated_star{
+    color:$rated_star;
+}
+
+.unrated_star{
+    color:$unrated_star;
+}
+
+.hat_style{
+    width:44px;
+    height:44px;
+    border:1px solid $hat_border;
+    border-radius:50%;
+    object-fit: contain;    
+    margin-right: 6px;
+}
+

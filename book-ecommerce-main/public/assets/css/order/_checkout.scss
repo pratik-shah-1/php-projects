@@ -1,0 +1,81 @@
+.checkout{
+    width:800px;
+    margin:50px auto;
+    border:0.5px solid lightgray;
+    border-radius:4px;
+    overflow:hidden;
+    & > p{
+        @include title;
+    }
+    @media screen and (max-width:850px){
+        width:90%;
+    }
+    @media screen and (max-width:576px){
+        form{
+            margin-bottom:30px !important;
+            div{
+                display:flex;
+                flex-direction:column;    
+                margin:0 !important;
+                div{
+                    margin:7px 0 !important;
+                }
+                select,button{
+                    margin-left:0 !important;
+                    margin-top:15px;
+                }
+            }
+        }        
+    }
+    form{
+        display:flex;
+        flex-direction:column;
+        margin:10px 25px;
+        div{//Form Direct div which contain inner div 
+            display:flex;
+            margin:12px 0;
+            div{//This is inner div which contain input and label
+                margin:0;//Here Problem is that if parent div have margin then that margin is inherite here..
+                display:flex;
+                flex-direction:column;                
+                width:100%;
+                &:first-child{
+                    margin-right:25px;
+                }
+                &:last-child{//This is For Text area div
+                    margin-right:0 !important;
+                }
+                label{
+                    font-weight:500;
+                    margin-bottom:3px;
+                }
+                input,textarea{
+                    width:100%;
+                    padding:7px 10px;
+                    border:0.5px solid lightgray;
+                    border-radius:4px;
+                    &:last-child{
+                        margin-right:0;
+                    }
+                }
+                textarea{
+                    height:100px;
+                }
+            }
+            select,button{
+                width:100%;
+                padding:7px 10px;
+                border:0.5px solid lightgray;
+                border-radius:4px;
+                &:last-child{
+                    margin-right:0;
+                }
+            }
+            button{
+                margin-left:25px;
+                border:0;
+                font-weight:500;
+            }
+        }
+    }
+}

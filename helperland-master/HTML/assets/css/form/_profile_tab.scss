@@ -1,0 +1,72 @@
+.profile{
+    padding:0 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_tabs{
+    display: flex;
+    button{
+        width:250px;
+        height: 55px;//ACTIVE TABLE_TAB_BTN HEIGHT IS ALSO 55PX...
+        border:0;
+        color:$profile_text;
+        border-bottom:3px solid $input_border;
+        background-color: white;
+        font-size: 16px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & > div{
+            margin-right: 10px;
+            position: relative;
+            width:24px;
+            height:26px;
+            overflow: hidden;
+            img{
+                width:100%;
+                height:52px;
+                object-fit: cover;
+                position: absolute;
+                top:0;
+                left:0;
+            }    
+        }
+    }
+}
+
+.active_profile_tab{
+    color:$active_profile_tab !important;
+    border-bottom: 3px solid $active_profile_tab !important;
+    & > div{
+        margin-right: 10px;
+        position: relative;
+        width:24px;
+        height:26px;
+        overflow: hidden;
+        img{
+            width:100%;
+            height:52px;
+            object-fit: cover;
+            position: absolute;
+            top:unset !important;
+            bottom:0px;
+            left:0;
+        }    
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .profile_tabs{
+        button{
+            span{
+                display: none;
+            }
+            & > div{
+                margin-right:0px;
+            }
+        }
+    }
+}

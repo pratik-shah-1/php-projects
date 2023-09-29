@@ -1,0 +1,123 @@
+
+.payment_summary{
+    box-shadow:1px 1px 7px $payment_summary_shadow;
+    border-radius: 2px;
+    overflow: hidden;
+    & > p{
+        // FOR TITLE
+        height: 67px;
+        line-height: 67px;
+        color:white;
+        background-color: $book_service_main;
+        font-size: 18px;
+        font-weight: 500;
+        padding-left: 22px;
+    }
+    & > div{
+        // MAIN CONTAINER FOR ALL SMALL DIV...
+        & > div{
+            border-bottom: 1px solid $payment_summary_border;
+            padding:12px 19px;
+            p{
+                padding:4px 0;
+                color:$book_service_title;
+            }
+            & > p{// duration title
+                font-weight: 500;
+            }
+            & > div{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        & > div:nth-child(1){
+            // DATE TIME AND ETC...
+            padding-bottom: 8px;
+            p{
+                font-size: 16px;
+                font-weight: normal;
+            }
+        }
+        & > div:nth-child(2){
+            // DURATION...
+            #service_extra_container{                
+                width:100%;
+                display: flex;
+                flex-direction: column;
+                p{
+                    padding:4px 0;
+                    color:$book_service_title;
+                }
+                & > div{
+                    width:100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }    
+            }
+            & > div:last-child{
+                margin-top: 8px;
+                padding-top:8px;
+                border-top:1px solid $payment_summary_border;
+                p{
+                    font-weight: 500;
+                }
+            }
+        }
+        & > div:nth-child(3){
+            // PRICE PER CLEANING...
+            div{
+                p:last-child{
+                    font-weight: 500;
+                }
+            }
+        }
+        & > div:nth-child(4){
+            //TOTAL PAYMENT...
+            div:first-of-type{
+                p{
+                    color:$book_service_main;
+                    font-weight: 500;
+                    &:first-child{
+                        font-size: 20px;
+                    }
+                    &:last-child{
+                        font-size: 42px;
+                    }
+                }
+            }
+            // COMMENTED STYLE FOR DISCOUNT...
+            // div:last-of-type{
+            //     p{
+            //         font-size: 20px;
+            //         color:$book_service_para !important;
+            //         font-weight: 500;
+            //     }
+            // }
+            // & > p{
+            //     padding-top:5px;
+            //     font-weight: normal;
+            //     font-size:14px;
+            //     span{
+            //         color:#FF0000;
+            //     }
+            // }
+        }
+        & > button{
+            width: 100%;
+            height: 46px;
+            padding:0 19px;
+            display: flex;
+            align-items: center;
+            background-color: $payment_summary_bottom_btn;
+            color:$book_service_para;
+            font-size: 14px;
+            border:0;
+            i{
+                margin-right:6px;
+                font-size: 18px;
+            }
+        }    
+    }
+}

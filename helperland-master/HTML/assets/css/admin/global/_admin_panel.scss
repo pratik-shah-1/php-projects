@@ -1,0 +1,91 @@
+
+.admin_panel{
+    display: flex;
+    background-color:$admin_bg;
+    height:100%;
+}
+
+.admin_left{
+    width:auto;
+    height: auto;
+}
+
+.admin_tab_list{
+    width:272px;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 2px 0px 6px $admin_tab_shadow;
+    z-index: $admin_left_z_index;
+}
+
+@mixin admin_tab_btn {
+    width:100%;
+    height:56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:18px 18px;
+    background-color: white;
+    color:$admin_tab_text;
+    border:0;
+    border-bottom: 1px solid #E5E5E5;
+    font-size: 16px;
+    &:hover{
+        background-color: whitesmoke;
+    }    
+}
+
+.admin_tab_list > a{
+    @include admin_tab_btn;
+}
+
+.active_admin_tab_btn{
+    background-color: whitesmoke !important;
+}
+
+.admin_accordion{
+    div:first-of-type{
+        button{// ACCORDION BUTTON
+            @include admin_tab_btn;
+            padding-right: 0;
+            i{
+                margin-right: 20px;
+                width:20px;
+                height:20px;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color:$admin_tab_text;
+            }
+        }
+    }
+    div:last-of-type{
+        padding:0;
+        div{// ACCORDION CONTENT...
+            width:100%;
+            height:auto;
+            display: flex;
+            flex-direction: column;
+            background-color: whitesmoke;
+            a{
+                width:100%;
+                padding:16px 0;
+                padding-left: 26px;
+                color:$admin_tab_text;
+            }
+        }
+    }
+}
+
+.admin_sidenav_active_tab{
+    color:$admin_tab_active_text;
+}
+
+.admin_right{
+    width:calc(100% - 272px);
+    height: 100%;
+    padding:0 20px;
+}

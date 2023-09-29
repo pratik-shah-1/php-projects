@@ -1,0 +1,66 @@
+.contact_details{
+    display:flex;
+    flex-direction:column !important;
+    align-items:flex-start;
+    margin-top:105px;
+    margin-left:80px;
+    padding-bottom:100px;// Because of footer will hurt...
+
+
+    @media screen and (max-width:992px) {
+        margin-left:0;
+        // margin-right:auto;
+    }
+
+    @media screen and (min-width:1600px) {
+        margin-top:224px;
+        margin-left:160px;            
+    }
+    // title
+    & > p{
+        @include spartan;
+        font-weight:bold;
+        font-size:24px;
+        @media screen and (min-width:1600px) {
+            font-size:32px;            
+        }
+    }
+    // Mobile & Contact....
+    div:nth-child(2){
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        margin:32px 0;
+        @media screen and (min-width:1600px) {
+            margin:48px 0;            
+        }
+        p{
+            @include spartan;
+            font-size: 18px;
+            @media screen and (min-width:1600px) {
+                font-size: 24px;
+            }    
+        }
+    }
+    // Social Media LInks
+    div:nth-child(3){
+        display: flex;
+        flex-direction:column;
+        a{
+            @include spartan;
+            display:flex;
+            align-items:center;
+            margin:6px 0;
+            width:100%;
+            font-size: 18px;
+            @media screen and (min-width:1600px) {
+                margin:12px 0;                
+                font-size: 24px;
+            }
+            i{
+                padding-right:12px;
+            }
+        }
+    }
+
+}

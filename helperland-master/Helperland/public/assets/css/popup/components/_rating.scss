@@ -1,0 +1,64 @@
+#rating_popup{
+    display: flex;
+    flex-direction: column;
+    .popup_title{
+        padding-bottom: 10px;
+        border-bottom: 1px solid lightgray;
+    }
+}
+
+.rate_type{
+    display: flex;
+    flex-direction: column;
+    margin:10px 0;
+}
+
+.rating_container{
+    padding:10px 0;
+    display: flex;
+    align-items: center;
+    & > p{
+        width:140px;
+    }
+}
+
+.rating_div{
+    // DIRECTION WILL BE RIGHT TO LEFT (BECAUSE WE TAKE A INPUT:ratio 5 TO 1)
+    direction: rtl;
+    input{
+        display: none;
+    }
+    label{
+        margin:0 2px;
+    }
+    label i{
+        color:lightgray;
+        transition: color 0.2s;
+    }
+    label:hover i,
+    label:hover ~ label i,
+    input:checked ~ label i{
+        color:$rated_star;
+    }
+
+}
+
+.rating_feedback{
+    p{
+        padding:5px 0;
+    }
+    textarea{
+        height:100px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:576px){
+    .rating_container{
+        display: flex;
+        & > p{
+            font-size: 14px;
+            width:120px;
+        }
+    }
+}

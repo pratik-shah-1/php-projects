@@ -1,0 +1,125 @@
+.horizontal_card{// same as portfolio card 
+    height:570px;
+    @media screen and (max-width:768px) {
+        height:auto;
+    }
+    @media screen and (min-width:1600px) {
+        width:1100px;
+        height:900px;    
+    }
+
+    overflow-y:hidden;
+    // Container of Left & Right....
+    & > div:nth-child(2){
+        display:flex !important;
+        flex-direction:column;
+        height:100%;
+        // by the above propery margin bottom will come...
+        .left{
+            width:100%;
+            order:2;
+            & div:nth-child(1){
+                height:auto;
+                @media screen and (min-width:1600px) {
+                    padding-top:15px;
+                    width:100%;
+                }
+            }        
+            //Container of Credit and button 
+            & div:nth-child(2){
+                padding-top:12px;
+                display:flex;
+                @media screen and (max-width:768px) {
+                    flex-direction:column;
+                }
+                div{
+                    width:100%;
+                    &:nth-child(2){
+                        @media screen and (max-width:768px) {
+                            padding-top:20px;
+                        }
+                        width:auto;
+                        margin:0 auto;
+                        display:grid;
+                        grid-template-columns:repeat(2,1fr);
+                        grid-gap:5px;
+                        a{                            
+                            width:115px;
+                            height:36px;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            background:transparent;
+                            border-radius:50px;
+                            border:0.5px solid lightgray;
+                            transition:all 0.5s;
+                            font-size:12px;
+                            margin:0px 15px 8px 0;
+                            @media screen and (min-width:1600px) {
+                                width:176px;
+                                height:48px;
+                                font-size:18px;    
+                                margin:0px 24px 0px 0;
+                            }
+                            @include spartan;
+                            i{
+                                display:flex;
+                                align-items:center;
+                                font-size:12px;
+                                @media screen and (min-width:1600px) {
+                                    font-size:16px;                            
+                                }
+                            }
+                            &:hover{
+                                background:white;
+                                color:black;
+                                i{
+                                    color:$main_color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .right{
+            order:1;
+            @media screen and (min-width:1600px) {
+                .owl-carousel{
+                    width:650px;
+                    margin:0 auto;
+                    height:auto;
+                }
+                .owl-carousel .item{
+                    width:650px;
+                    height:350px;
+                }
+                .owl-carousel .item img{
+                    height:100%;
+                    width:100%;
+                    object-fit:contain;
+                }       
+            }                        
+            @media screen and (max-width:1600px) {
+                .owl-carousel{
+                    width:400px;
+                    margin:0 auto;
+                }
+                .owl-carousel .item{
+                    width:400px;
+                    max-height:230px;
+                }                    
+            }
+            @media screen and (max-width:768px) {
+                .owl-carousel{
+                    width:100%;
+                }
+                .owl-carousel .item{
+                    width:100%;
+                    height:auto;
+                }
+            }
+        }                
+    }
+}

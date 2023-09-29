@@ -1,0 +1,38 @@
+.my_addresses{
+    padding:20px 0;
+    width:100%;
+    border-radius: 4px;
+    overflow: hidden;
+    & > button{
+        margin-top: 14px;
+    }
+    table{
+        width:100%;
+        tr{
+            border:1px solid $input_border;
+        }
+        td{
+            padding:10px;
+            div{
+                p{// ADDRESS
+                    color:$profile_text;
+                    padding-bottom: 6px;
+                    span{
+                        font-weight: bold;
+                    }
+                }
+                button{// EDIT, DELETE  
+                    margin:5px;
+                    background-color: transparent;
+                    border:0;
+                    width:30px;
+                    height: 30px;
+                    i{
+                        font-size: 18px;
+                        color:$profile_text;
+                    }
+                }
+            }
+        }
+    }
+}

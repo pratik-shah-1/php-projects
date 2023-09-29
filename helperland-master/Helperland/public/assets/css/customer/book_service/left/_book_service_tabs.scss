@@ -1,0 +1,71 @@
+.book_service_tabs{
+    width:800px;
+    & > div:first-of-type{// TAB BUTTONS
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: $book_service_tab;
+        button{
+            width:200px;
+            height: 67px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border:0;
+            p{
+                color:$book_service_para;
+                font-size: 16px;
+                font-weight: 500;
+                margin:0;    
+            }
+            div{// SCROLLABLE IMAGES...
+                margin-right:7.5px;
+                position: relative;
+                width:32px;
+                height:32px;
+                overflow:hidden;
+                transition: all 0.2s;
+                img{
+                    object-fit: cover;
+                    position: absolute;
+                    width:32px;
+                    height:64px;
+                    top:0;
+                    left:50%;
+                    transform: translateX(-50%);
+                    transition: all 0.2s;
+                }
+            }
+        }
+    }
+} 
+
+.active_book_service_tab{
+    background-color: $book_service_active_tab !important;
+    p{
+        color:white !important;
+    }
+    & > div{
+        img{
+            top:unset !important;
+            bottom:0 !important;
+        }
+    }
+    position: relative;
+    &::after{
+        content: "";
+        width:18px;
+        height:18px;
+        position: absolute;
+        bottom:-9px;
+        left:calc(100% - (24/2)px);
+        // left:50%;
+        // transform:translateX(-50%);
+        transform: rotate(45deg);
+        background-color:$book_service_active_tab;
+    }
+}
+
+

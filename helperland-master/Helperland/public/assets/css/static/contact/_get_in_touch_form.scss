@@ -1,0 +1,82 @@
+.get_in_touch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.get_in_touch_title{
+    color:$get_in_touch_title;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.get_in_touch{
+    form{
+        padding-top: 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .form_group{
+            padding-bottom: 15px;
+        }
+        & > div{
+            width:614px;
+            overflow: hidden;
+            &:nth-child(1),
+            &:nth-child(2){
+                display: grid;
+                grid-template-columns: 300px 300px;
+                grid-column-gap:14px;    
+                .phone_number{
+                    height:46px;
+                }
+            }
+            &:nth-child(3),
+            &:nth-child(4){
+                select, textarea{
+                    width:614px;
+                }
+                textarea{
+                    height:146px;
+                }
+            }
+            &:nth-child(5){
+                // ATTACHMENT...
+                display: flex;
+                flex-direction: column;
+                .file_upload{
+                    // FILE INPUT...
+                    width:100px;
+                    padding:8px;
+                    text-align: center;
+                    border:0.5px solid lightgray;
+                    border-radius: 40px;
+                    color:#646464;
+                    input{
+                        display: none;
+                    }    
+                }
+            }
+            &:nth-child(6){
+                // TICK CHECKBOX...
+                display: flex;
+                align-items: flex-start;
+                padding-bottom: 15px;
+                p{
+                    padding-left: 10px;
+                    margin-top: -3px;
+                    color: #646464;
+                    font-size: 14px;
+                    line-height: 20px;
+                    a{
+                        color:$form_btn;
+                    }
+                }
+            }
+        }
+        button{
+            width:162px;
+        }
+    }
+}

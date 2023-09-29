@@ -1,0 +1,27 @@
+@import "./left/index";
+@import "./right/index";
+
+.book_service{
+    padding-top:40px;
+    padding-bottom: 50px;
+}
+
+.book_service_container{
+    padding-top: 49px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    label{
+        padding-bottom: 10px;
+        font-size: 16px;
+        font-weight:500;
+        color:$book_service_title;
+    }
+}
+
+.book_service_tabs{
+    & > div:last-of-type{// TAB BODY 
+        padding-top:34px;
+    }
+}
+

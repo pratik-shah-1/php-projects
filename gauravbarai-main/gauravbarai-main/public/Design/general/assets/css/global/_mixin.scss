@@ -1,0 +1,65 @@
+$main_color:#36305E;
+
+// -------------------------------Font-Face-------------------------------
+
+@font-face {
+    font-family: "BigNoodleTitling"; 
+    src: url("//db.onlinewebfonts.com/t/ff78c5e2b6c3846035dae28cdaa65583.eot"); 
+    src: url("//db.onlinewebfonts.com/t/ff78c5e2b6c3846035dae28cdaa65583.eot?#iefix") 
+    format("embedded-opentype"), 
+    url("//db.onlinewebfonts.com/t/ff78c5e2b6c3846035dae28cdaa65583.woff2") format("woff2"), 
+    url("//db.onlinewebfonts.com/t/ff78c5e2b6c3846035dae28cdaa65583.woff") format("woff"), 
+    url("//db.onlinewebfonts.com/t/ff78c5e2b6c3846035dae28cdaa65583.ttf") format("truetype"), 
+    url("//db.onlinewebfonts.com/t/ff78c5e2b6c3846035dae28cdaa65583.svg#BigNoodleTitling") format("svg"); 
+}
+@font-face {
+    font-family: "Spartan MB"; 
+    src: url("//db.onlinewebfonts.com/t/b6e5385a4772a5792603dfb941fd7909.eot"); 
+    src: url("//db.onlinewebfonts.com/t/b6e5385a4772a5792603dfb941fd7909.eot?#iefix") 
+    format("embedded-opentype"), 
+    url("//db.onlinewebfonts.com/t/b6e5385a4772a5792603dfb941fd7909.woff2") format("woff2"), 
+    url("//db.onlinewebfonts.com/t/b6e5385a4772a5792603dfb941fd7909.woff") format("woff"), 
+    url("//db.onlinewebfonts.com/t/b6e5385a4772a5792603dfb941fd7909.ttf") format("truetype"), 
+    url("//db.onlinewebfonts.com/t/b6e5385a4772a5792603dfb941fd7909.svg#Spartan MB") format("svg"); 
+}
+
+
+// -------------------------------Side Pading-------------------------------
+@mixin side_padding{
+    padding:0 50px;
+    @media screen and (max-width:600px) {
+        padding:0 20px;
+    }
+    @media screen and (min-width:1600px) {
+        padding:0 144px;        
+    }    
+}
+
+@mixin section_height{
+    height:720px;
+    @media screen and (min-width:1440px) {
+        height:800px;
+    }
+    @media screen and (min-width:1600px) {
+        height:1080px;
+    }
+}
+
+// -------------------------------Font-------------------------------
+@mixin big_noodle {
+    font-family: 'BigNoodleTitling', 'sans-serif';
+}
+
+@mixin spartan {
+    font-family: 'Spartan MB', 'sans-serif'; 
+}
+
+@mixin glassmorphism{
+    background: rgba( 196, 187, 214, 0.15 );
+    backdrop-filter: blur( 4.0px );
+    -webkit-backdrop-filter: blur( 4.0px );
+    border-radius:25px;
+    @media screen and (min-width:1600px) {
+        border-radius:50px;        
+    }
+}

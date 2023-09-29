@@ -1,0 +1,104 @@
+.left{
+    width:260px;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    @media screen and (max-width:768px) {
+        padding-top:20px;
+        width:100%;
+        order:2;                
+    }
+    @media screen and (min-width:1600px) {
+        width:444px;
+        height:545px;    
+    }
+
+    // Details of game...
+    & div:nth-child(1){
+        // height:114px;
+        height:auto;
+        @media screen and (max-width:768px) {
+            width:100%;
+        }
+        @media screen and (min-width:1600px) {
+            // height:228px;                    
+            height:auto;
+        }
+        p{
+            @include spartan;
+            font-size:14px;
+            line-height:20px;
+            @media screen and (min-width:1600px) {
+                font-size:24px;                                                    
+                margin:0;
+                line-height:32px;    
+            }
+        }
+    }
+
+    //credit of developer & desiginer...
+    & div:nth-child(2){
+        padding-top:25px;
+        @media screen and (min-width:1600px) {
+            height:145px;
+        }
+        p{
+            @include spartan;
+            font-size:14px;
+            @media screen and (min-width:1600px) {
+                font-size:20px;                        
+            }
+        }
+        & p:first-child{
+            font-weight:bold;
+        }
+    }
+
+    // Buttons....
+    & div:nth-child(3){
+        padding-top:15px;
+        width:auto;
+        display:flex;
+        flex-wrap:wrap;
+        @media screen and (max-width:768px) {
+            display:grid;
+            grid-template-columns:repeat(2, 1fr);
+            margin:0 auto;
+        }
+        a{
+            width:115px;
+            height:36px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:transparent;
+            border-radius:50px;
+            border:0.5px solid lightgray;
+            transition:all 0.5s;
+            font-size:12px;
+            margin:14px 15px 0 0;
+            @media screen and (min-width:1600px) {
+                width:176px;
+                height:48px;
+                font-size:18px;    
+                margin:28px 24px 0px 0;
+            }
+            @include spartan;
+            i{
+                display:flex;
+                align-items:center;
+                font-size:12px;
+                @media screen and (min-width:1600px) {
+                    font-size:16px;                            
+                }
+            }
+            &:hover{
+                background:white;
+                color:black;
+                i{
+                    color:$main_color;
+                }
+            }
+        }
+    }
+}

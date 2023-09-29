@@ -1,0 +1,124 @@
+$mp:20px;//Is For Product Container Padding and Margin of Product..
+
+.product_container{
+    padding:$mp 0 $mp $mp; // From to right side we have zero becaue it's will be given by product
+    display:flex;
+    justify-content:center;
+    flex-direction:row;
+    flex-wrap:wrap;
+    @media screen and (max-width:659px){
+        padding:20px;
+        flex-direction:column;        
+        .product{
+            width:100%;
+            flex-direction:row;
+            & > div:last-child{
+                margin-left:10px;
+                width:100%;
+                p{
+                    text-align:left;
+                }
+            }
+        }
+    }
+}
+
+.product{        
+    margin:0 $mp $mp 0; //right and bottom margin
+    padding:10px;
+    width:300px;
+    height:160px;//140pximg+10pxtop_padding+10px_bottompadding
+    border:0.5px solid lightgray;
+    border-radius:4px;
+    box-shadow:1px 1px 20px whitesmoke;
+    display:flex;
+    align-items:center;
+    overflow: hidden;
+    //This Div is For Images...
+    div:first-child{
+        display:flex;
+        justify-content:center;
+        img{
+            width:120px;
+            height:140px;
+            border-radius:4px;
+        }
+    }
+    //This Div is For Info of Products..
+    & > div:last-child{
+        width:100%;
+        margin-left:10px;
+        p{
+            margin:0;
+            margin-bottom:5px;
+            //Name of Product...
+            &:nth-child(1){
+                margin-top:5px;
+                font-weight:500;
+                width:150px;//300-10paddingleft-10paddingright-10paddingleft-140img
+                white-space:nowrap;
+                overflow: hidden;
+            }
+            //Details of Product...
+            &:nth-child(2){
+                font-size:14px;
+                overflow: hidden;
+                max-height:40px;
+            }
+            //Price of Product...
+            &:nth-child(3){
+                font-weight:500;
+            }
+        }
+        & > button{
+            width:100%;
+            padding:4px;
+            font-size:14px;
+            i{margin-left:7px;}
+        }
+        //For Shopers...
+        //Make Dropdown for UPDATE & Delete...
+        .product_dropdown{
+            position: relative;
+            width:100%;
+            button{
+                width:100%;
+                padding:4px;
+                font-size:14px;
+                i{margin-left:7px;}
+            }
+            .product_dropdown_menu{
+                width:100%;
+                position: absolute;
+                top:-70px;
+                left:0;
+                border-radius:4px;
+                ul{
+                    width:100%;
+                    list-style:none;
+                    background-color:white;
+                    margin:0 !important;
+                    li{
+                        a{
+                            border:0.5px solid lightgray;
+                            display:flex;
+                            width:100%;
+                            align-items:center;
+                            justify-content:center;
+                            font-size:14px;
+                            padding:5px 0;
+                            text-decoration:none;
+                            color:gray;
+                            &:hover{
+                                background-color:whitesmoke;
+                                color:black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}    
+
+

@@ -1,0 +1,43 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color:white;
+}
+
+a{
+    text-decoration:none;
+}
+
+$main_color:#070018;
+
+body{
+    margin:0;
+    background-color:$main_color;
+    position: relative;
+    //This relative for navbar, footer
+}
+
+// This Class for Current Links
+.nav_barder_bottom:after{
+    content:"";
+    position: absolute;
+    bottom:0px;
+    left:0;
+    width:100%;
+    height:2px;
+    background-color:white;
+}
+
+.d-none{
+    display:none !important;
+}
+
+
+.webgl_btn{
+    background:white !important;
+    color:black;
+    i{
+        color:$main_color;
+    }
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin</title>    
+    <link rel="icon" href="assets/img/dark.jpg" type="image/gif" sizes="16x16">
+    <!------------------ CSS FILES ------------------>
+    <!-- Bootstrap v4.5.0 -->
+    <!-- FontAwesome v5.13.1 -->
+    <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">    
+    <link rel="stylesheet" type="text/css" href="assets/lib/swiper/swiper-bundle.css">    
+    <!------------------ JS FILES ------------------>
+    <script type="text/javascript" src="assets/lib/splide.min.js"></script>
+    <script type="text/javascript" src="assets/lib/jquery.js"></script>
+    <script type="text/javascript" src="assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="assets/lib/swiper/swiper-bundle.js"></script>
+    <script type="text/javascript" src="assets/lib/sweetalert/sweetalert.min.js"></script>
+</head>
+<body>
+
+<div class="random"></div>
+
+<div class="sidenav">
+    <ul>
+        <li class="bg-dark h5 font-weight-normal"><p class="text-light"><span>Dashboard</span><i class="fas fa-tachometer-alt ml-2 "></i></p></li>
+        <li><a href="/admin/users"><i class="text-warning fas fa-users"></i><span>Users</span></a></li>
+        <li><a href="/admin/shopers"><i class="text-success fas fa-store"></i><span>Shopers</span></a></li>
+        <li><a href="/admin/products"><i class="text-primary fas fa-swatchbook"></i><span>Products</span></a></li>
+        <li><a href="/admin/orders"><i class="text-danger fas fa-shopping-bag"></i><span>Orders</span></a></li>
+        <li><a href="/admin/product_category"><i class="fas fa-th text-success"></i><span>Product Category</span></a></li>
+        <li><a href="/admin/coupons"><i class="text-primary fas fa-gifts"></i><span>Coupon Code</span></a></li>
+        <li><a href="/admin/complaints"><i class="text-warning fas fa-exclamation"></i><span>Complaint</span></a></li>
+        <li><a href="/admin/slider"><i class="far fa-images text-primary"></i><span>Offer Slider</span></a></li>
+        <li><a href="#"><i class="text-secondary fas fa-layer-group"></i><span>Selling</span></a></li>
+        <hr class="m-0 border-thin">
+        <li><a href="/admin/signout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+    </ul>
+</div>
+
+<div class="admin_top shadow py-2 d-flex align-center justify-content-between">
+
+    <button class="ml-3 admin_sidenav_btn"><i class="fas fa-bars text-dark"></i></button>
+    <a href="/admin/" class="m-0 align-self-center"  style="text-decoration:none;">
+        <p class="text-center text-dark align-self-center h4 font-weight-normal m-0">Welcome to Admin</p>
+    </a>
+    <div class="mr-3">
+        <button  data-toggle="dropdown">
+            <img src="./assets/img/ronaldo.jpg" alt="">
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="/admin/profile/"><span>Profile</span></a>
+            <hr class="m-0">
+            <a class="dropdown-item" href="/admin/signout"><span>Logout</span></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    //Sidenavbar...
+    $('.admin_sidenav_btn').click(function(){
+        $('.sidenav').addClass('show_sidenav');
+        $('.random').addClass('backlight');
+        $('body').css('overflow','hidden');
+    });
+
+    //Closing Sidenavbar...
+    $('.random').click(function(){
+        $('.random').removeClass('backlight');
+        $('.sidenav').removeClass('show_sidenav');
+        $('.coupon_code_form').addClass('d-none');
+        $('.add_field_form').addClass('d-none');
+        $('body').css('overflow','auto');
+    }); 
+</script>
+
+
+
+<div class="overflow-auto">
+    <!-- <p class="display-4 mt-5 text-center">No Coupons, Please Add!!!</p>			 -->
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th class="h5 font-weight-normal">Index</th>
+            <th class="h5 font-weight-normal">Coupon Code</th>
+            <th class="h5 font-weight-normal">Discount</th>
+            <th class="h5 font-weight-normal">Expiry-YY/MM/DD</th>
+            <th class="h5 font-weight-normal">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="h5 font-weight-normal">1</td>
+            <td class="h5 font-weight-normal">MAHABACHAT</td>
+            <td class="h5 font-weight-normal">34%</td>
+            <td class="h5 font-weight-normal">03/04/2021</td>
+            <td class="d-flex">
+                <a class="btn btn-warning mr-3" href="#">Edit</a>
+                <a class="btn btn-danger" href="/admin/coupon/delete/id">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="h5 font-weight-normal">1</td>
+            <td class="h5 font-weight-normal">MAHABACHAT</td>
+            <td class="h5 font-weight-normal">34%</td>
+            <td class="h5 font-weight-normal">03/04/2021</td>
+            <td class="d-flex">
+                <a class="btn btn-warning mr-3" href="#">Edit</a>
+                <a class="btn btn-danger" href="/admin/coupon/delete/id">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="h5 font-weight-normal">1</td>
+            <td class="h5 font-weight-normal">MAHABACHAT</td>
+            <td class="h5 font-weight-normal">34%</td>
+            <td class="h5 font-weight-normal">03/04/2021</td>
+            <td class="d-flex">
+                <a class="btn btn-warning mr-3" href="#">Edit</a>
+                <a class="btn btn-danger" href="/admin/coupon/delete/id">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="h5 font-weight-normal">1</td>
+            <td class="h5 font-weight-normal">MAHABACHAT</td>
+            <td class="h5 font-weight-normal">34%</td>
+            <td class="h5 font-weight-normal">03/04/2021</td>
+            <td class="d-flex">
+                <a class="btn btn-warning mr-3" href="#">Edit</a>
+                <a class="btn btn-danger" href="/admin/coupon/delete/id">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+</div>
+
+<div class="coupon_code_form d-none">
+
+<div class="bg-dark">
+    <h5 class="font-weight-normal m-0 px-3 text-light" name='title'>Coupon</h5>
+    <button class="rounded-circle add_coupon_btn btn">
+        <i class="fas fa-times text-danger"></i>
+    </button>			
+</div>
+
+<form method="POST" action="/admin/coupon/action">
+    <input type="text" name="id" hidden="hide">
+    <input type="text" placeholder="New Coupon Code" name="code" required>
+    <input type="text" placeholder="Discount? Enter only Number" name="discount" required>
+    <input type="date" name="expiry" required>
+    <!-- This is Below button for Update of Add Coupon Code -->
+    <button class="btn" name="btn">ADD</button>		
+</form>
+</div>
+
+<!-- This is Below Button for Open Dilouge Box of Coupon Code  -->
+<button class="position-fixed rounded-circle btn btn-primary add_coupon_btn" style="right:30px; bottom:30px">
+<i class="fas fa-plus"></i>
+</button>
+
+<script>	
+//Dilougue Box  Open for ADD ...
+$('.add_coupon_btn').click(function(){
+    $('.coupon_code_form').toggleClass('d-none');
+    $('.random').toggleClass('backlight');
+    $('[name="id"]').val('');
+    $('[name="code"]').val('');
+    $('[name="discount"]').val('');
+    $('[name="expiry"]').val('');
+    $('[name="title"]').html('Add New Coupon');
+    $('[name="btn"]').html('ADD');
+});
+
+function edit_coupon(id, code, discount, expiry){
+    $('.coupon_code_form').toggleClass('d-none');
+    $('.random').toggleClass('backlight');
+    $('[name="id"]').val(id);
+    $('[name="code"]').val(code);
+    $('[name="discount"]').val(discount);
+    $('[name="expiry"]').val(expiry);
+    $('[name="title"]').html('Update Coupon');
+    $('[name="btn"]').html('UPDATE');
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+.tracking_order{
+    padding:60px 0;
+    display:flex;
+    justify-content:center;
+    position: relative;
+    & > div{
+        width:150px;
+        height:150px;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        & > i{
+            font-size:30px;
+            color:gray;
+        }
+        & > img{
+            width:30%;
+            height:20%;
+            object-fit:contain;
+            transform:scale(1.2);
+        }
+        & > p{
+            margin:0;
+            padding:10px 0 0;
+            font-weight:500;
+            font-size:14px;
+            color:gray;
+        }
+    }
+
+    .order_progress{
+        width:600px;// because above div width is 150px;
+        height:40px !important;
+        position:absolute;
+        left:calc(50% - 300px);
+        bottom:60px;
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        div{
+            width:150px !important;
+            height:40px;
+            display:flex;
+            flex-direction:row;
+            justify-content:center;    
+            align-items:center;
+            & > i{ 
+                font-size:25px;
+                color:gray;
+                background-color:white;
+                z-index:1;
+            }
+            position: relative;
+            & > span{
+                position:absolute;
+                right:0;
+                top:calc(50% - 2px);
+                left:50%;
+                width:100%;
+                // border-left:4px solid white;
+                z-index:0;
+            }
+        }
+    }
+    .progress_line{
+        position: absolute;
+        bottom:30px;
+        height:50px;
+        width:470px;
+        border-top:1px dashed gray;
+        z-index:-1;
+    }
+
+    @media screen and (max-width:776px) {
+        flex-direction:column;
+        align-items:center;
+        height:600px;
+        padding:0;
+        & > div{
+            width:200px;
+            height:100px;
+            i{
+                font-size:25px;
+            }
+            & > img{
+                width:40%;
+                height:40%;
+                object-fit:contain;
+                transform:scale(1.2);
+            }
+    
+        }
+        .order_progress{
+            width:200px;
+            height:400px !important;
+            top:calc(50% - 200px);
+            left:calc(50% - 100px);
+            display:flex;
+            flex-direction:column;
+            & > div{
+                width:200px !important;
+                height:100px !important;
+                display:flex;
+                flex-direction:row;
+                align-items:center;
+                justify-content:flex-start;
+                position: relative;
+                & > span{
+                    width:100%;
+                    height:100px;
+                    position:absolute;
+                    top:calc(50% - 2px);
+                    left:12px;
+                    border:0;
+                    // border-left:4px solid white;
+                    z-index:0;
+                }
+    
+            }
+        }    
+        .progress_line{
+            width:176px;//random giving...
+            height:300px;
+            top:calc(50% - 150px);
+            left:calc(50% - 88px);
+            border:0;
+            border-left:2px dashed gray;            
+            z-index:-1;
+        }
+    }
+
+}
+
+.border_left{
+    border:0;
+    border-left:2px solid #008000 !important;
+}
+
+.border_top{
+    border-top:3px solid #008000 !important;
+}

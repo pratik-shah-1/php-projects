@@ -1,0 +1,15 @@
+@import "./global/mixin";
+@import "./global/global";
+@import "./global/navbar";
+@import "./global/footer";
+
+@import "./home/section_1/section_1";
+@import "./home/section_2/section_2";
+@import "./home/section_3/section_3";
+
+@import "./contact_section/contact_section";
+
+@import "./portfolio/portfolio";
+
+// Navbar Height in responsive 125px
+// so section_1_card and contact page margin_top:150px

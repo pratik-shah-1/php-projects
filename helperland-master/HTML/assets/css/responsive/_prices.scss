@@ -1,0 +1,66 @@
+@media screen and (max-width:1200px) {
+    .prices_s1,
+    .prices_s2,
+    .prices_s3{
+        padding-left:20px;
+        padding-right:20px;
+        height: auto;
+    }
+    .prices_s1_hr{
+        width:80%;
+    }
+    .extra_services_card_container{
+        flex-wrap: wrap;
+    }
+    .extra_services_card{
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width:1050px) {
+    .prices_s2_card_container{
+        flex-wrap: wrap;
+    }
+    .prices_s2_card{
+        margin-bottom: 50px;
+    }
+    .prices_s3_card_container{
+        display: flex;
+        flex-direction: column;
+    }    
+    .prices_s3_img_card{
+        order:1;
+    }
+    .prices_s3_text_card{
+        order:2;
+        width:100%;
+        p{
+            margin:0 auto;
+            text-align: center !important;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .prices_card{
+        width:100%;
+        & > div:nth-child(3){
+            div{
+                padding-left: 50px;
+            }
+        }
+    }
+    .prices_s2_card{
+        margin-bottom: 30px;
+    }
+    .prices_s3_img_card{
+        img{
+            width:300px;
+        }
+    }
+    .prices_s3_text_card{
+        p{
+            white-space: pre-wrap !important;
+        }
+    }
+}

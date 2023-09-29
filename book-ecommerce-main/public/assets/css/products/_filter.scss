@@ -1,0 +1,126 @@
+//here we give inner div width:200px;
+.filter{
+    width:100%;
+    height:250px;//by my adjuctment...
+    position: absolute;
+    top:-270px;
+    // top:65px;
+    background-color:white;
+    z-index:2;
+    overflow:hidden;
+    overflow-x:auto;
+    display:grid;
+    grid-template-columns:repeat(9,200px);
+    box-shadow: 4px 4px 4px lightgray;
+    transition:all 0.8s;
+    // display:none;
+    @media screen and (max-width:992px) {
+        // top:110px;
+        height:250px;
+    }
+
+    & > div{
+        display:flex;
+        flex-direction:column;
+        padding:20px;
+        h6{
+            font-size:14px;
+            text-align:center; 
+            text-transform:uppercase; 
+            margin-bottom:10px;
+        }
+        border:0.5px solid lightgray;
+        border-bottom:0;
+        border-left:0;
+    }
+
+    .f_category{
+        select{
+            padding:3px;
+            border:0.5px solid lightgray;
+            border-radius:4px;
+        }
+    }
+
+    .f_sub_category{
+        overflow:auto;
+        & > div{
+            border-bottom:0;
+            padding:10px 0;
+            p{
+                font-weight:500;
+                font-size:14px;
+                margin:0;
+                padding-bottom:3px;
+            }
+            select{
+                width:100%;
+                display:flex;
+                border:0.5px solid lightgray;
+                border-radius:4px;
+                padding:3px;    
+            }
+        }
+    }
+
+    .f_lang,
+    .f_earlier,
+    .f_format,
+    .f_condition,
+    .f_discount{
+        div{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:5px;
+            label{
+                margin:0;
+                font-weight:500;
+                font-size:14px;
+            }
+            input{
+                width:16px;
+                height:16px;
+                border-radius:0;
+                border:0.5px solid lightgray;
+            }
+        }
+    }
+
+    .f_price{
+        div{
+            display: flex;
+            flex-direction:column;
+            align-items:center;
+            input{
+                border:0.5px solid lightgray;
+                border-radius:4px;
+                padding:3px 7px;
+                margin:5px 0;
+            }
+        }
+    }
+
+    .f_discount{
+        width:250px;
+        div{
+            label{
+            }
+        }
+    }
+
+    .f_rating{
+        div{
+            display:flex;
+            flex-direction:row;    
+        }
+        a{
+            text-decoration:none;
+            padding:3px 0;
+            i{
+                margin-right:5px;
+            }
+        }
+    }
+
+}

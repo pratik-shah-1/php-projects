@@ -1,0 +1,12 @@
+.guarantee{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 40px;
+}
+
+@import "./section_1";
+@import "./section_2";
+@import "./section_3";

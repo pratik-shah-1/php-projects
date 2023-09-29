@@ -1,0 +1,23 @@
+.cart_header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 0;
+    border-radius:4px;
+    background-color:$main_color;
+    color:white;
+    margin-bottom:20px;
+    p{
+        margin:0;
+        font-size:24px;
+        padding-left:20px;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        &:last-child{
+            font-size:16px;
+            text-transform:unset;
+            font-weight:normal;
+            padding-right:20px;
+        }
+    }
+}

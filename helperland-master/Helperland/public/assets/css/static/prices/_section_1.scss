@@ -1,0 +1,94 @@
+
+.prices_s1{
+    padding-top: 31px;
+    padding-bottom: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prices_card{
+    margin-top: 42px;
+    width:553px;
+    height: 304px;
+    border:1px solid $prices_s1_border;
+    & > p{
+        height: 59px;
+        line-height: 59px;
+        text-align: center;                
+        background-color: $prices_s1_card_bg;
+        color:white;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    & > div{
+        &:nth-child(2){
+            padding-top: 30px;
+            p{
+                text-align: center;
+                font-size: 48px;
+                color:$prices_s1_text;
+            }
+            span{
+                font-size: 30px;
+                color:$prices_s1_text;
+            }
+        }
+        &:nth-child(3){
+            div{
+                padding-top: 19px;
+                padding-left: 151px;
+                display: flex;
+                align-items: center;
+                img{
+                    width:24px;
+                    height: 24px;
+                }
+                p{
+                    padding-left: 8px;
+                    color:$prices_s1_text;
+                }
+            }
+        }
+    }
+}
+
+.prices_s1_hr{
+    margin:51px 0 40px;
+    width:1140px;
+    background-color:$prices_s1_horizontal_line;
+}
+
+.extra_services_card_container{
+    padding-top: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.extra_services_card{
+    div{
+        margin:0 54px;
+        width:108px;
+        height: 108px;
+        border:0.5px solid $prices_s1_border;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    p{
+        margin-top: 14px;
+        text-align: center;
+        &:nth-child(2){
+            color:$prices_s1_text;
+        }
+        &:nth-child(3){
+            margin-top:5px;
+            font-size: 18px;
+            font-weight: bold;
+            color:$prices_s1_card_bg;
+        }
+    }
+}
+

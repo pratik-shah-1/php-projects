@@ -1,0 +1,57 @@
+.sp_new_service_request{
+    display: flex;
+    margin-bottom: 10px;
+    div{
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        p,label{
+            color:$table_text;
+            padding-right: 5px;
+        }
+        input,select{
+            color:$table_text;
+            margin:0 5px;
+        }
+        select{
+            width:100px;
+            height:40px;
+            padding:5px;
+            border:0.5px solid $table_border;
+            border-radius: 4px;
+        }
+    }
+}
+@media screen and (max-width:576px){
+    .sp_new_service_request{
+        display: flex;
+        flex-direction: column;
+        div{
+            padding-bottom: 10px;
+        }
+    }        
+}
+
+.sp_service_history{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    div{
+        display: flex;
+        align-items: center;
+        p{
+            color:$table_text;
+            margin-right: 10px;
+        }
+        select{
+            width:100px;
+            height: 40px;
+            padding:6px;
+            color:$table_text;
+            border:1px solid $table_border;
+            border-radius: 4px;
+        }
+    }
+}
+

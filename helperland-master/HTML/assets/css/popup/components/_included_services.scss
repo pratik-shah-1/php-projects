@@ -1,0 +1,33 @@
+#included_services_popup{
+    width:100%;
+    padding:10px;
+    background-color: white;
+    & > p{
+        font-weight: 500;
+        font-size:18px;
+        text-align: center;
+        padding:10px 0;
+    }
+    & > div{
+        // CONTAINER OF ALL THE SERVIES DIV...
+        display: grid;
+        grid-template-columns: repeat(3, 300px);
+        & > div{
+            padding:0 20px;
+            // ALL THREE MAIN DIV..
+            & > p{
+                font-weight: 500;
+                font-size:18px;
+                padding:12px 0;
+            }
+            & > div{
+                display: flex;
+                align-items: center;
+                padding-bottom: 14px;
+                p{
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

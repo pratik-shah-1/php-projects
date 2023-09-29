@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin</title>    
+    <link rel="icon" href="assets/img/dark.jpg" type="image/gif" sizes="16x16">
+    <!------------------ CSS FILES ------------------>
+    <!-- Bootstrap v4.5.0 -->
+    <!-- FontAwesome v5.13.1 -->
+    <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">    
+    <link rel="stylesheet" type="text/css" href="assets/lib/swiper/swiper-bundle.css">    
+    <!------------------ JS FILES ------------------>
+    <script type="text/javascript" src="assets/lib/splide.min.js"></script>
+    <script type="text/javascript" src="assets/lib/jquery.js"></script>
+    <script type="text/javascript" src="assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="assets/lib/swiper/swiper-bundle.js"></script>
+    <script type="text/javascript" src="assets/lib/sweetalert/sweetalert.min.js"></script>
+</head>
+<body>
+
+<div class="random"></div>
+
+<div class="sidenav">
+    <ul>
+        <li class="bg-dark h5 font-weight-normal"><p class="text-light"><span>Dashboard</span><i class="fas fa-tachometer-alt ml-2 "></i></p></li>
+        <li><a href="/admin/users"><i class="text-warning fas fa-users"></i><span>Users</span></a></li>
+        <li><a href="/admin/shopers"><i class="text-success fas fa-store"></i><span>Shopers</span></a></li>
+        <li><a href="/admin/products"><i class="text-primary fas fa-swatchbook"></i><span>Products</span></a></li>
+        <li><a href="/admin/orders"><i class="text-danger fas fa-shopping-bag"></i><span>Orders</span></a></li>
+        <li><a href="/admin/product_category"><i class="fas fa-th text-success"></i><span>Product Category</span></a></li>
+        <li><a href="/admin/coupons"><i class="text-primary fas fa-gifts"></i><span>Coupon Code</span></a></li>
+        <li><a href="/admin/complaints"><i class="text-warning fas fa-exclamation"></i><span>Complaint</span></a></li>
+        <li><a href="/admin/slider"><i class="far fa-images text-primary"></i><span>Offer Slider</span></a></li>
+        <li><a href="#"><i class="text-secondary fas fa-layer-group"></i><span>Selling</span></a></li>
+        <hr class="m-0 border-thin">
+        <li><a href="/admin/signout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+    </ul>
+</div>
+
+<div class="admin_top shadow py-2 d-flex align-center justify-content-between">
+
+    <button class="ml-3 admin_sidenav_btn"><i class="fas fa-bars text-dark"></i></button>
+    <a href="/admin/" class="m-0 align-self-center"  style="text-decoration:none;">
+        <p class="text-center text-dark align-self-center h4 font-weight-normal m-0">Welcome to Admin</p>
+    </a>
+    <div class="mr-3">
+        <button  data-toggle="dropdown">
+            <img src="./assets/img/ronaldo.jpg" alt="">
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="/admin/profile/"><span>Profile</span></a>
+            <hr class="m-0">
+            <a class="dropdown-item" href="/admin/signout"><span>Logout</span></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    //Sidenavbar...
+    $('.admin_sidenav_btn').click(function(){
+        $('.sidenav').addClass('show_sidenav');
+        $('.random').addClass('backlight');
+        $('body').css('overflow','hidden');
+    });
+
+    //Closing Sidenavbar...
+    $('.random').click(function(){
+        $('.random').removeClass('backlight');
+        $('.sidenav').removeClass('show_sidenav');
+        $('.coupon_code_form').addClass('d-none');
+        $('.add_field_form').addClass('d-none');
+        $('body').css('overflow','auto');
+    }); 
+</script>
+
+
+<div class="overflow-auto">
+	<table class="table table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th class="font-weight-normal h5">Index</th>
+				<th class="font-weight-normal h5">Customer Name</th>
+				<th class="font-weight-normal h5">Product Name</th>
+				<th class="font-weight-normal h5">Quantity</th>
+				<th class="font-weight-normal h5">Order Time</th>
+				<th class="font-weight-normal h5">Payment Status</th>
+				<th class="font-weight-normal h5">Delivery Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="font-weight-normal h5">1</td>
+				<td class="font-weight-normal h5">pratik</td>
+				<td class="font-weight-normal h5">C Language</td>
+				<td class="font-weight-normal h5">20</td>
+				<td class="font-weight-normal h5">20/3/2021</td>
+				<td class="font-weight-normal h5"><span class="rounded-pill px-3 py-1 text-light bg-success">Paid</span></td>
+				<td class="font-weight-normal h5">Delivered</td>
+			</tr>
+			<tr>
+				<td class="font-weight-normal h5">1</td>
+				<td class="font-weight-normal h5">pratik</td>
+				<td class="font-weight-normal h5">C Language</td>
+				<td class="font-weight-normal h5">20</td>
+				<td class="font-weight-normal h5">20/3/2021</td>
+				<td class="font-weight-normal h5"><span class="rounded-pill px-3 py-1 text-light bg-success">Paid</span></td>
+				<td class="font-weight-normal h5">Delivered</td>
+			</tr>
+			<tr>
+				<td class="font-weight-normal h5">1</td>
+				<td class="font-weight-normal h5">pratik</td>
+				<td class="font-weight-normal h5">C Language</td>
+				<td class="font-weight-normal h5">20</td>
+				<td class="font-weight-normal h5">20/3/2021</td>
+				<td class="font-weight-normal h5"><span class="rounded-pill px-3 py-1 text-light bg-success">Paid</span></td>
+				<td class="font-weight-normal h5">Delivered</td>
+			</tr>
+			<tr>
+				<td class="font-weight-normal h5">1</td>
+				<td class="font-weight-normal h5">pratik</td>
+				<td class="font-weight-normal h5">C Language</td>
+				<td class="font-weight-normal h5">20</td>
+				<td class="font-weight-normal h5">20/3/2021</td>
+				<td class="font-weight-normal h5"><span class="rounded-pill px-3 py-1 text-light bg-success">Paid</span></td>
+				<td class="font-weight-normal h5">Delivered</td>
+			</tr>
+			<tr>
+				<td class="font-weight-normal h5">1</td>
+				<td class="font-weight-normal h5">pratik</td>
+				<td class="font-weight-normal h5">C Language</td>
+				<td class="font-weight-normal h5">20</td>
+				<td class="font-weight-normal h5">20/3/2021</td>
+				<td class="font-weight-normal h5"><span class="rounded-pill px-3 py-1 text-light bg-success">Paid</span></td>
+				<td class="font-weight-normal h5">Delivered</td>
+			</tr>
+			<tr>
+				<td class="font-weight-normal h5">1</td>
+				<td class="font-weight-normal h5">pratik</td>
+				<td class="font-weight-normal h5">C Language</td>
+				<td class="font-weight-normal h5">20</td>
+				<td class="font-weight-normal h5">20/3/2021</td>
+				<td class="font-weight-normal h5"><span class="rounded-pill px-3 py-1 text-light bg-success">Paid</span></td>
+				<td class="font-weight-normal h5">Delivered</td>
+			</tr>
+			<tr>
+				<td class="font-weight-normal h5">1</td>
+				<td class="font-weight-normal h5">pratik</td>
+				<td class="font-weight-normal h5">C Language</td>
+				<td class="font-weight-normal h5">20</td>
+				<td class="font-weight-normal h5">20/3/2021</td>
+				<td class="font-weight-normal h5"><span class="rounded-pill px-3 py-1 text-light bg-success">Paid</span></td>
+				<td class="font-weight-normal h5">Delivered</td>
+			</tr>
+			<tr>
+				<td class="font-weight-normal h5">1</td>
+				<td class="font-weight-normal h5">pratik</td>
+				<td class="font-weight-normal h5">C Language</td>
+				<td class="font-weight-normal h5">20</td>
+				<td class="font-weight-normal h5">20/3/2021</td>
+				<td class="font-weight-normal h5"><span class="rounded-pill px-3 py-1 text-light bg-success">Paid</span></td>
+				<td class="font-weight-normal h5">Delivered</td>
+			</tr>
+			<tr>
+				<td class="font-weight-normal h5">1</td>
+				<td class="font-weight-normal h5">pratik</td>
+				<td class="font-weight-normal h5">C Language</td>
+				<td class="font-weight-normal h5">20</td>
+				<td class="font-weight-normal h5">20/3/2021</td>
+				<td class="font-weight-normal h5"><span class="rounded-pill px-3 py-1 text-light bg-success">Paid</span></td>
+				<td class="font-weight-normal h5">Delivered</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+
+</body>
+</html>

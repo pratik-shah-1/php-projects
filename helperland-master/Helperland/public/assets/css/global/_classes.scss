@@ -1,0 +1,128 @@
+.d_none{
+    display: none !important;
+}
+
+.welcome_message{
+    margin-top: $navbar_height;
+    font-size: 30px;
+    height:119px;
+    background-color: $welcome_message_bg;
+    border-bottom:1px solid $welcome_message_border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+        font-size: 30px;
+        color:$welcome_message_text;
+        span{
+            font-weight: bold;
+        }
+    }
+}
+
+.circle{
+    border-radius: 50%;
+}
+
+.badge{
+    width:fit-content;
+    height:fit-content;
+    padding:3px;
+    position: absolute;
+    top:8px;
+    right:8px;
+    border:0;
+    border-radius: 50%;
+    background-color: #f81d22;
+    color:white;
+    font-size: 12px;
+}
+
+.backlight{
+    position: absolute;
+    background-color: black;
+    width:100%;
+    height: 100%;
+    opacity: 0.6;
+    z-index: $backlight_z_index;
+}
+
+.border_left{
+    border-left:1px solid white;
+}
+
+.border_right{
+    border-right:1px solid white;
+}
+
+.banner{
+    margin-top:$navbar_height;
+    width:100%;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: 370px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .banner{
+        img{
+            height:200px;
+            object-fit: cover;
+        }
+    }
+}
+
+.title_with_icon{
+    /* 
+        width of border of one side = 62px;
+        margin between icon and border = 9px;
+        width of icon = 24px
+        width of div = 62*2 + 9*2 + 24 = 166px
+
+        font height = 43, 
+        margin between icon and font = 9, 
+        icon height = 24 // icon i half cover in div... so that we take 12px
+        height = 43 + 9 + 12px = 64px
+    */
+    width:100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p{        
+        width:100%;
+        text-align: center;
+        color:$title_with_icon_text;
+        font-weight: bold;
+        font-size: 35px;
+        margin:0 0 9px;
+    }
+    & > div{
+        margin-top: -12px;
+        width:166px;
+        height: 24px;
+        border-bottom:1px solid $title_with_icon_border;
+        background-color: white;
+        position: relative;
+        & > div{
+            width:24px + 18px;
+            height:24px;
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            bottom:-12.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            img{
+                width:24px;
+                height:24px;
+                object-fit: cover;
+            }    
+        }
+    }
+}

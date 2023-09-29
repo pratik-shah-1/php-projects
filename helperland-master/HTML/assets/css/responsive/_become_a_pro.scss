@@ -1,0 +1,57 @@
+@media screen and (max-width:992px) {
+    .become_a_pro_s1,
+    .become_a_pro_s2{
+        height: auto;
+    }
+    .become_a_pro_s2_bg_left,
+    .become_a_pro_s2_bg_right{
+        display: none;
+    }
+    .become_a_pro_s2{
+        padding-bottom:0px;
+    }
+    .become_a_pro_s2_card{
+        width:100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        img{
+            order:1;
+        }
+        div{
+            padding-top:20px;
+            order:2;
+            p,a{
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+    .become_a_pro_s1,
+    .become_a_pro_s2{
+        height: auto;
+        padding-left: 20px;
+        padding-right:20px;
+    }
+    .registration_form{
+        margin-top:$navbar_height + 30px;
+        width:100%;
+        padding-left: 20px;
+        padding-right:20px;
+    }
+    .registration_form > form > div{
+        &:nth-child(7),
+        &:nth-child(8){
+            label, p{
+                font-size:14px;
+            }
+        }
+    }
+    .registration_form > form > button{
+        margin-top: 0;
+    }
+
+}

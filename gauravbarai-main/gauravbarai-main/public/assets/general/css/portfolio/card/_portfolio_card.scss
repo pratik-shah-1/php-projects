@@ -1,0 +1,40 @@
+.portfolio_card{
+    @include glassmorphism
+    width:600px;
+    height:500px;
+    padding:25px 40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    @media screen and (max-width:768px) {
+        padding:25px 30px;
+        width:100%;
+        height:auto;
+    }
+
+    @media screen and (min-width:1600px) {
+        padding:56px 80px;
+        width:998px;
+        height:848px;
+    }
+
+    @import "./left_right/title";
+    
+    // Container of Left & Right....
+    & > div:nth-child(2){
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        margin-top:28px;
+        @media screen and (max-width:768px) {
+            flex-direction:column;            
+        }
+        @media screen and (min-width:1600px) {
+            margin-top:56px;
+        }
+        @import "./left_right/left";
+        @import "./left_right/right";
+    }    
+}    
+

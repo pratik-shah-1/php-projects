@@ -1,0 +1,34 @@
+.a_right{
+    width:calc(100% - 250px);//because a_left have 250px width...
+    height:530px;
+    @media screen and (max-width:768px){
+        width:100%;
+    }
+}
+// In Account Component have direct form...
+.person_info{
+    @include account_component;
+    div{
+        @include label_input;
+    }
+}
+.change_pswd{
+    @include account_component;
+    @include label_input;
+    input{
+        margin:7px 0;
+    }
+}
+.person_adrs{
+    @include account_component;
+    div{
+        @include label_input;
+    }
+}
+.del_account{
+    @include account_component;
+    @include label_input;
+    input{
+        margin:15px 0 0 0;
+    }
+}

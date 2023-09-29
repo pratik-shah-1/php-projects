@@ -1,0 +1,64 @@
+.cart_right{
+    margin-left:20px;
+    width:300px;
+    height:100%;
+    border:0.5px solid lightgray;
+    overflow: hidden;
+    border-radius:4px;
+    //Title of Price Details...        
+    & > p{
+        @include title;
+        font-size:16px;
+    }
+    .cart_right_inner{
+        padding:20px;
+        div{
+            padding:0px 0px 20px 0;
+            display:flex;
+            justify-content:space-between;
+            p{
+                margin:0;
+                font-size:14px;
+                &:last-child{
+                    font-weight:500;
+                }
+            }
+            &:last-child{
+                form{
+                    button{
+                        text-transform:uppercase;
+                        font-weight:500;
+                        font-size:14px;
+                    }
+                }
+            }
+            &:nth-child(4){//For Coupon Code...
+                padding:0;
+                display:flex;
+                flex-direction:column;
+                cursor: pointer;
+                & > div{
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-between;
+                    p{
+                        margin:0;
+                    }
+                }
+                form{
+                    width:100%;
+                    margin-bottom:10px;
+                    input{
+                        width:100%;
+                        padding:3px 7px;
+                        border:0.5px solid lightgray;
+                        border-radius:4px;
+                    }
+                }
+            }//For Coupon Code...
+        }//End of Inner Right->Div...
+    }//End of Cart Inner Right...
+    @media screen and (max-width:581px){
+        width:100%;
+    }
+}//End of CartRight

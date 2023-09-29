@@ -1,0 +1,43 @@
+.guarantee_s3{
+    width:100%;
+    margin:0 auto;
+    padding:100px 0;
+    display: grid;
+    grid-template-columns: 200px 650px 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+.guarantee_s3 > div{
+    &:nth-child(1){
+        // FIRST IMAGES DIV...
+        width:200px;
+        height:200px;
+        border-radius: 50%;
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    &:nth-child(2){
+        margin:0 60px;
+        // SECTION PARA DIV...
+        p{
+            color:$guarantee_s3_para;
+            font-size: 18px;
+            line-height: 26px;
+            &:first-child{
+                font-size: 30px;
+                font-weight: bold;
+                padding-bottom: 14px;
+                color:$guarantee_s3_title;
+            }
+        }
+    }
+    &:nth-child(3){
+        .form_btn{
+            padding:10px 20px;
+        }
+    }
+}

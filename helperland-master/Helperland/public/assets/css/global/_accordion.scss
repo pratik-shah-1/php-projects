@@ -1,0 +1,11 @@
+.accordion_btn{
+    i,img{
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+.accordion_content{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}

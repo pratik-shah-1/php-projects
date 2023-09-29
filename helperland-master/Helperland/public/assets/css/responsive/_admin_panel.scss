@@ -1,0 +1,20 @@
+@media screen and (max-width:1200px) {
+    .admin_tab_list{
+        width:260px;
+        height:100vh;
+        position: fixed;
+        left:-272px;
+        top:0;
+        overflow-y: auto;
+    }
+    .admin_dashboard_btn{
+        display: flex;
+    }
+    .admin_right{
+        width:100%;
+        overflow-x: auto;
+    }
+    .admin_tab_content{
+        min-width:1000px;
+    }
+}

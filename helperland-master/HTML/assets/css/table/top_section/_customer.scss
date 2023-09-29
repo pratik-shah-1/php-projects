@@ -1,0 +1,15 @@
+.customer_service_history{
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p{
+        color:$table_text;
+        font-weight: bold;
+        font-size: 22px;
+    }
+}
+
+.customer_current_service_requests{
+    @extend .customer_service_history;
+}

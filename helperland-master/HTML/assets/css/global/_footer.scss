@@ -1,0 +1,110 @@
+// ---------------FOOTER_COLORS------------------
+$footer_bg:#111111;
+$footer_orange:#FF7B6D;
+$footer_form_title:#353548;
+$footer_form_border:#565656;
+$footer_copyright_text:#9BA0A3;
+$footer_links_color:#F1F1F1;
+
+footer{
+    margin-top: auto;
+    width:100%;
+    height: $footer_height;
+    overflow: hidden;
+}
+
+.footer_transparent_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 53px;
+    padding-top: 9px;
+}
+
+.get_our_newsletter{
+    p{
+        color:$footer_form_title;
+        font-size: 17px;
+        margin-bottom: 16px;
+        text-align: center;
+        font-weight: bold;
+    }
+    div{
+        input{
+            background-color: transparent;
+            width:233px;
+            height: 40px;
+            padding-left: 20px;
+            border:0.5px solid $footer_form_border;
+            border-radius: 20px;
+            outline: none;
+        }
+        button{
+            margin-left:20px;
+            background-color: $footer_orange;
+            color:white;
+            width:88px;
+            height: 40px;
+            border-radius: 20px;
+            border:0;
+        }
+    }
+}
+
+.footer_main_div{
+    display: flex;
+    flex-direction: column;
+    padding:0 100px;
+    padding-top:30px;
+    padding-bottom: 20px;
+    background-color: $footer_bg;
+    & > div:first-child{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.footer_logo{
+    a{
+        img{
+            width: 120px;
+            height: 92px;
+        }
+    }
+}        
+
+.footer_links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+        color:$footer_links_color;
+        margin: 0 14px;
+        font-size: 14px;
+    }
+}
+
+.copyright_section{
+    margin-top:20px;
+    padding-top: 20px;
+    background-color: $footer_bg;
+    color:$footer_copyright_text;
+    text-align: center;    
+    font-size: 14px;
+    border-top:0.5px solid gray;
+    a{
+        color:$footer_copyright_text;
+    }
+}
+
+.social_media_links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+        color:white;
+        margin: 0 10px;
+    }
+}
+

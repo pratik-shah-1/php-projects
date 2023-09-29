@@ -1,0 +1,39 @@
+.completed_status,
+.cancelled_status,
+.active_status,
+.inactive_status,
+.pending_status,
+.new_status{
+    width:82px;
+    height:30px;
+    border-radius: 2px;
+    font-size: 14px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.completed_status{
+    background-color: $success_status;
+}
+
+.cancelled_status{
+    background-color: $cancel_status;
+}
+
+.active_status{
+    background-color: $active_status;
+}
+
+.inactive_status{
+    background-color: $inactive_status;
+}
+
+.new_status{
+    background-color: $new_status;
+}
+
+.pending_status{
+    background-color: $pending_status;
+}

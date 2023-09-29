@@ -1,0 +1,74 @@
+.contact_details{
+    width:500px;
+    padding-bottom:100px;// Because of footer will hurt...
+    display:flex;
+    flex-direction:column;    
+    align-items:flex-start;
+    margin:auto;
+
+    @media screen and (max-width:600px){
+        width:100%;
+    }
+
+    @media screen and (max-width:1280px) {
+        height:auto;
+    }
+
+    @media screen and (min-width:1600px) {
+        width:800px;        
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        margin-top:50px;
+        max-height:102px;
+        padding-bottom:0px;
+    }
+
+    // Mobile & Contact....
+    & > div:nth-child(1){
+        width:100%;
+        display:flex;
+        justify-content:space-around;
+        @media screen and (max-width:1600px) {
+            flex-direction:column;
+        }
+        p{
+            @include spartan;
+            margin-bottom:10px;
+            @media screen and (min-width:1600px) {
+                font-size: 24px;
+            }    
+        }
+    }
+
+    // Social Media LInks
+    div:nth-child(2){
+        display: flex;
+        width:100%;
+        justify-content:space-between;
+        @media screen and (max-width:1600px) {
+            flex-direction:column;
+        }
+        @media screen and (min-width:1600px) {
+            margin-top:35px;            
+        }
+        a{
+            @include spartan;
+            display:flex;
+            align-items:center;
+            width:100%;
+            margin-bottom:15px;
+            @media screen and (min-width:1600px) {
+                margin-right:20px;
+                &:last-child{
+                    width:auto;
+                }
+                font-size: 24px;
+            }
+            i{
+                padding-right:12px;
+            }
+        }
+    }
+
+}

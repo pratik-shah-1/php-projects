@@ -1,0 +1,26 @@
+$success:#3fa848;
+
+#success_popup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    i{
+        margin: 20px 0;
+        color:$success;
+        font-size: 70px;
+    }
+    p{
+        font-size: 18px;
+        text-align: center;
+        margin:5px 0;
+        color:$popup_text;
+        &:last-of-type{
+            font-size: 14px;
+        }
+    }
+    button{
+        margin-top: 10px;
+        width:68px;
+        padding:10px;
+    }
+}

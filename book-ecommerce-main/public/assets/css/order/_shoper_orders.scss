@@ -1,0 +1,29 @@
+.shoper_orders{
+    min-height:100vh;
+    table{
+        thead{
+            tr{
+                th{
+                    font-weight:350;
+                    font-size:16px;
+                    border-right:2px solid gray;
+                }
+            }
+        }
+        tbody{
+            tr{
+                td{
+                    height:40px;
+                    line-height:40px;
+                    font-weight:400;
+                    letter-spacing:0.5px;
+                    &:last-child{
+                        button{
+                            width:100%;
+                        }
+                    }    
+                }
+            }
+        }
+    }
+}

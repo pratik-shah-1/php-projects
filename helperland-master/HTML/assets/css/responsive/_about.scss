@@ -1,0 +1,14 @@
+@media screen and (max-width:1200px) {
+    .about_s1_para_container,
+    .about_s2_para_container{
+        padding-left: 20px;
+        padding-right:20px;
+        width:100%;
+    }
+    .about_s1,.about_s2{
+        height: auto;
+    }
+    .about_s2{
+        padding-bottom: 0px;
+    }
+}

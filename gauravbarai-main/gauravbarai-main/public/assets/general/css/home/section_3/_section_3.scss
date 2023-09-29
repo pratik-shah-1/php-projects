@@ -1,0 +1,46 @@
+.section_3{
+    display:flex;
+    flex-direction:column;
+    @include section_height;
+    @include side_padding;
+
+
+    // image of section 3
+    position:relative;
+    .img_of_section_3{
+        position:absolute;
+        z-index:-1;
+        left:0;
+        overflow:hidden;
+        width:100%;
+        @include section_height;
+        @media screen and (max-width:1280px) {
+            height:100%;
+        }
+        img{
+            width:100%;
+            height:100% !important;
+            object-fit:cover;
+            opacity:17%;
+        }
+    }
+
+
+    @media screen and (max-width:992px) {
+        height:auto;
+    }
+
+    // Contact Details & Forms.
+    div{
+        display:flex;
+        flex-direction:row;
+        @media screen and (max-width:992px) {   
+            display:flex;
+            flex-direction:column;
+            align-items:center;                
+        }
+        @import './contact_form';
+        @import './contact_details';
+    }
+
+}

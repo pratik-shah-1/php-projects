@@ -1,0 +1,82 @@
+@media screen and (max-width:1200px) {
+    .table_tab{
+        width:100%;
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right:20px;
+    }
+    .table_tab_left{
+        width:100%;
+        overflow-x: auto;
+    }
+    .table_tab_list{
+        flex-direction: row;
+        overflow-x: auto;
+        a{
+            white-space: nowrap;
+            padding-right: 20px;
+            border-right:0.5px solid whitesmoke;
+        }
+    }
+    .table_tab_right{
+        width:100%;
+        margin-top: 30px;
+        overflow-x: auto;
+    }
+    .profile{
+        padding:0;
+    }
+
+}
+
+@media screen and (max-width:576px) {
+    .table_tab_content{
+        overflow: hidden;
+    }
+    .table_tab_content table{
+        border:0;
+        overflow: hidden;
+        thead{
+            display: none;
+        }
+        tbody, tr, td{
+            width:100%;
+            display: block;
+            overflow: hidden;
+        }
+        tr{
+            box-shadow: 4px 4px 10px $table_to_card_shadow;
+            border-radius: 8px !important;
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        td{
+            display: flex;
+            // flex-direction: column;
+            // align-items: center;
+            justify-content: center;
+            // border:1px solid $table_border;
+        }
+    }
+    .customer_details{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }    
+}
+
+
+// --------------------TABLE-TAB-CONTENT[TOP-SECTIONS]------------------------
+@media screen and (max-width:576px) {
+    .customer_current_service_requests{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        button{
+            margin:10px 0;
+        }
+    }
+}

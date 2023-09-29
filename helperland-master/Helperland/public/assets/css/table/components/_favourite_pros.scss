@@ -1,0 +1,46 @@
+.favourite_pros{
+    display: flex;
+}
+
+.favourite_pros_card{
+    margin:0 15px 15px;
+    width:250px;
+    border:0.5px solid lightgray;
+    border-radius: 4px;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p{
+        color:$favourite_pros_text;
+    }
+    .service_provider{
+        flex-direction: column;
+        align-items: center;
+        img{
+            margin:15px auto;
+        }
+        p{
+            text-align: center;
+        }
+    }
+    & > div:nth-child(2){
+        padding:15px 0;
+    }
+    & > div:last-of-type{
+        button{
+            margin:0 10px;
+        }
+    }
+}
+
+
+@media screen and (max-width:576px) {
+    .favourite_pros{
+        display: flex;
+        flex-wrap: wrap;
+    }       
+    .favourite_pros_card{
+        width:100%;
+    }
+}

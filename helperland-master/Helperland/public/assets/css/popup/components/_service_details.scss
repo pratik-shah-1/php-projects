@@ -1,0 +1,18 @@
+#service_details_popup{
+    width:600px;
+    div{
+        padding:15px 0;
+        border-bottom:0.5px solid lightgray;
+        &:last-of-type{
+            border:0;
+        }
+        p{
+            font-weight: bold;
+            color:$popup_text;
+            padding-bottom:6px;
+            span{
+                font-weight: normal;
+            }
+        }
+    }
+}

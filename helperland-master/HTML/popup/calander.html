@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<!-- TAILWIND -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+	<!-- CALENDER -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
+	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js"></script>
+</head>
+<body>
+	<div class="container m-auto">
+		<div id='calendar'></div>		
+	</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          	initialView: 'dayGridMonth',
+          	dateClick: function() {
+		  	}
+        });
+        calendar.render();
+    });
+</script>
+</body>
+</html>

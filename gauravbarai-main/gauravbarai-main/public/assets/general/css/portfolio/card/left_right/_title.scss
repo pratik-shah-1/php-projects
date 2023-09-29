@@ -1,0 +1,25 @@
+.title{
+    display:flex;
+    @media screen and (min-width:1600px) {
+        text-align:center;
+    }
+    img{
+        width:28px;
+        height:28px;
+        margin-right:12px;
+        @media screen and (min-width:1600px) {
+            margin-right:24px;
+            width:56px;
+            height:56px;                                                        
+        }
+    }
+    p{
+        @include spartan;
+        font-size:18px;
+        font-weight: bold;        
+        @media screen and (min-width:1600px) {
+            margin:0;
+            font-size:36px;
+        }
+    }
+}

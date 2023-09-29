@@ -1,0 +1,17 @@
+.service_date{
+    display: flex;
+    flex-direction: column;
+    div{
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        img{
+            width:22px;
+            height:22px;
+            margin-right: 8px;
+        }
+        p{
+            white-space: nowrap;
+        }
+    }
+}

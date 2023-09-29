@@ -1,0 +1,160 @@
+.payment_summary_btn{
+    width:200px;
+    height:40px;
+    border-radius:34px 34px 0 0;
+    display: none;
+    position:fixed;
+    bottom:0;
+    left:calc(100% - (100px/2px));
+    z-index: 1;
+    font-size: 16px;
+    border:0;
+    background-color: #68af31;
+    color:white;
+}
+
+@media screen and (max-width:1280px){
+    .book_service{
+        padding-left:20px;
+        padding-right:20px;
+    }
+    .book_service_right{
+        margin:0;
+        height:75%;
+        overflow-y: auto;
+        position: fixed;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        background-color: white;
+        z-index: $popup_z_index - 2;
+        .model_close_btn{
+            display: block;
+        }
+    }
+    .book_service_questions{
+        padding:0 19px 19px;
+    }
+    .payment_summary_btn{
+        display: block;
+    }
+}
+
+
+@media screen and (max-width:992px) {
+    .book_service_tabs{
+        width:100%;
+        & > div:first-child{
+            & > button{
+                width:100%;
+            }
+        }
+    }
+    .schedule_plan{
+        & > div:nth-child(3){
+            // EXTRA SERVICES DIV...
+            & > div{
+                & > div{
+                    // CONTAINER OF ALL EXTRA SERVICES...
+                    width:150px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .book_service_tabs{
+        & > div:first-of-type{
+            // TAB BUTTONS
+            button{
+                position: relative;
+                p{
+                    display: none;
+                }
+                div{
+                    // IMAGE MOVER DIV[top <-> bottom]...
+                    position: absolute;
+                    left:50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+    .schedule_plan{
+        & > div:nth-child(2){
+            // SELECT DATE AND TIME DIV...
+            flex-direction: column;
+            & > div:nth-child(1){
+                & > div{
+                    // flex-direction: column;
+                    & > div{
+                        // THIS IS A FORM GROUP DIV...
+                        width:fit-content;
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
+        & > div:nth-child(3){
+            // EXTRA SERVICES DIV...
+            & > div{
+                justify-content:center;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+    .setup_service{
+        flex-direction: column;
+        align-items: flex-start;
+        & > div{
+            padding-bottom: 20px;
+            &:nth-child(2){
+                label{
+                    display: none;
+                }
+            }
+        }
+    }
+    .your_details{
+        & > div:nth-child(2){
+            & > div{
+                // FOR WRAPING A SERVICE PROVIDER...
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .address_form{
+            display: flex;
+            flex-direction: column;
+        }    
+    }
+    .make_payment{
+        & > div:nth-child(2){
+            & > div:first-child{// CARD_NUMBER, MM/YY, CVC/CVV
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+    .book_service_right{
+        width:90%;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .schedule_plan{
+        & > div:nth-child(2){
+            & > div:first-child{
+                & > div{
+                    // .from_date,
+                    .input_time{
+                        width:140px;
+                    }
+                }
+            }
+        }
+    }    
+}

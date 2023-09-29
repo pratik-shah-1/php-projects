@@ -1,0 +1,22 @@
+#reschedule_service_request_popup{
+    & > div{
+        display: flex;
+        flex-direction: column;
+        & > div:first-of-type{
+            // INPUT DATE AND TIME CONTAINER...
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            input,select{
+                width:100%;
+                padding:8px;
+                font-size: 14px;
+            }
+        }
+        & > div:last-of-type{
+            margin-bottom: 15px;
+        }
+    }
+}

@@ -1,0 +1,97 @@
+$margin:25px;
+.s_signup{
+    @include form;
+    & > p{ @include title; }
+    .section_1,.section_2{
+        & > p{//Section Title
+            margin:0;
+            font-weight:500;
+            padding:10px 0;
+            font-size:18px;
+            margin:0 $margin;
+        }
+        div{
+            @include label_input;
+            margin:15px $margin;
+        }
+    }
+}
+
+.s_login{
+    @include form;
+    & > p{ @include title; }
+    div{
+        @include label_input;
+        margin:10px $margin;
+    }
+}
+
+
+.u_signup{
+    @include form;
+    & > p{
+        @include title;
+    }
+    div{
+        @include label_input;
+        margin:15px $margin;
+        label{
+            span{color:red;}
+        }
+    }
+}
+
+
+.u_login{
+    @include form;
+    & > p{
+        @include title;
+    }
+    .section_1{//Input
+        div{
+            @include label_input;
+            margin:15px $margin;
+        }
+    }
+    .section_2{//Link like Forgot Password or Already....
+        margin:5px 0;
+        display:flex;
+        justify-content:center;
+    }
+    .section_3{
+        margin:0 $margin;
+        display:flex;
+        flex-direction:column;
+        button{//For Social Link...
+            margin:5px 0;
+            padding:5px 0;
+            font-weight:400;
+            border:0.5px solid lightgray;
+            border-radius:4px;
+            background-color:whitesmoke;
+            font-size:14px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            img{
+                width:20px;
+                height:20px;
+                margin-right:5px;
+            }
+        }
+    }
+}
+
+.forgot_pswd{
+    @include form;
+    & > p{
+        @include title;
+    }
+    div{
+        padding:15px $margin 0;
+        @include label_input;
+        input:last-child{
+            margin-top:15px !important;
+        }
+    }
+}
